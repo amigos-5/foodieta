@@ -83,12 +83,16 @@ function signHandler(req,res){
   res.render('pages/sign');
 }
 
+app.get('/about' ,aboutHandler);
+function aboutHandler(req,res){
+
+  res.redirect('/aboutus');}
 
 app.post('/logout',logoutHandler);
 function logoutHandler(req,res){
   req.session.loggedin = false;
   req.session.username = "";
-  res.render('pages/index');
+  res.redirect('/');
 }
 
 
