@@ -279,6 +279,8 @@ function handleSearch(req, res) {
               console.log(count);
               count++;
               if(caloriesMealsArr.length === count){
+             res.render('./pages/execludeMeal', {execludeItem:arr});
+
           res.render('./pages/searchPage', {searchArray:arr});
         }
       })
@@ -286,6 +288,76 @@ function handleSearch(req, res) {
 
   })
 }
+// exclude route
+app.post('/execlude',execludeHandler);
+
+function execludeHandler(req,res){
+let execludeItem = req.body.execludeItem;
+let apiKey=process.env.apiKey;
+let url =`https://api.spoonacular.com/recipes/complexSearch?excludeIngredients=${execludeItem}&apiKey=${apiKey}`;
+superagent.get(url).then (results => {
+
+
+  let excludeplate = results.body.results;
+  let excludeplateArr = excludeplate.map(value =>{
+      return value.id;
+  })
+  console.log(excludeplateArr);
+
+  let arr =[];
+  let count = 0;
+  let execludeArr = excludeplateArr.map(id =>{
+    let execludeUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`;
+    superagent.get(execludeUrl).then(results => {
+
+      let execludeData = results.body;
+          const execludeObject = new Meal(execludeData);
+          arr.push(execludeObject);
+          console.log(count);
+          count++;
+          if(excludeplateArr.length === count){
+      res.render('./pages/execludeMeal', {execludeItem:arr});
+    }
+  })
+})
+
+})
+}
+// include route
+app.post('/include',includeHandler);
+
+function includeHandler(req,res){
+  let includeItem = req.body.includeItem;
+  let apiKey=process.env.apiKey;
+  let url =`https://api.spoonacular.com/recipes/complexSearch?includeIngredients=${includeItem}&apiKey=${apiKey}`;
+  superagent.get(url).then (results => {
+  
+  
+    let includeplate = results.body.results;
+    let includeplateArr = includeplate.map(value =>{
+        return value.id;
+    })
+    // console.log(includeplateArr);
+  
+    let arr =[];
+    let count = 0;
+    let includeArr = includeplateArr.map(id =>{
+      let includeUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`;
+      superagent.get(includeUrl).then(results => {
+  
+        let includeData = results.body;
+            const includeObject = new Meal(includeData);
+            arr.push(includeObject);
+            console.log(count);
+            count++;
+            if(includeplateArr.length === count){
+        res.render('./pages/includeMeal', {includeItem:arr});
+      }
+    })
+  })
+  
+  })
+  }
 
 //....................................
 
