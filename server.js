@@ -87,6 +87,13 @@ function aboutHandler(req,res){
 
   res.redirect('/aboutus');}
 
+
+app.get('/moviess' ,aboutHandler);
+function aboutHandler(req,res){
+
+  res.render('pages/movies');}
+
+
 app.post('/logout',logoutHandler);
 function logoutHandler(req,res){
   req.session.loggedin = false;
