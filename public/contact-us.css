@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 body {
-  background-color: #e6e6e6;
+  background-color: #f7f1f1;
   font-size: 100%;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -29,7 +29,7 @@ div, textarea, input {
 .row.header {
   padding: 1.5em 2.5em;
   border-bottom: 1px solid #ccc;
-  background: url(https://images2.imgbox.com/a5/2e/m3lRbCCA_o.jpg) left -80px;
+  background: url(./imgSam/img\ \(19\).jpg) left -80px;
   color: #fff;
 }
 .row.body {
@@ -76,11 +76,11 @@ h3 {
   background-color: #bfbfbf;
 }
 .btn.btn-submit {
-  background-color: #4f6fad;
-  border-bottom-color: #374d78;
+  background-color: #625261;
+  border-bottom-color: #625261;
 }
 .btn.btn-submit:hover {
-  background-color: #5f7db6;
+  background-color: #625261;
 }
 
 form {
@@ -115,7 +115,7 @@ form ul li .divider {
   height: 1px;
   width: 100%;
   display: block;
-  background-color: #4f6fad;
+  background-color: #625261;
   background-image: linear-gradient(to right, #ee9cb4, #4f6fad);
 }
 form ul li .req {
@@ -124,7 +124,7 @@ form ul li .req {
 form label {
   display: block;
   margin: 0 0 0.5em 0;
-  color: #4f6fad;
+  color: #625261;
   font-size: 1em;
 }
 form input {
@@ -141,7 +141,7 @@ form textarea {
   color: #555;
 }
 form small {
-  color: #4f6fad;
+  color: #625261;
   margin: 0 0 0 0.5em;
 }
 
