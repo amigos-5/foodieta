@@ -144,11 +144,20 @@
     <hr id="b">
 
     <section class="bread">
-        <div class ="breadback"></div>
+        <div class="breadback"></div>
         <div class="breckfastimgs">
             <img src="imgSam/img (1).jpg" alt="">
             <img src="imgSam/img (25).jpg" alt="">
         </div>
+        <form class="searchForm" action="/searches/new" method="POST">
+            <input hidden name="searchWay" value="drink">
+            <button class="recipebtn breadbtn" type="submit">Bread</button>
+        </form>
+        <form class="searchForm" action="/searches/new" method="POST">
+            <input hidden name="searchWay" value="drink">
+            <button class="recipebtn breackfastbtn" type="submit">Breackfast</button>
+        </form>
+
     </section>
 
 
