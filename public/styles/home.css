@@ -312,7 +312,7 @@ main{
     box-shadow: rgb(6 24 44 / 40%) 0px 5px 6px 4px,
     rgb(6 24 44 / 65%) 0px 0px 8px -6px;
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr;
     justify-items: center;
     background-color: var(--white);
 
