@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class=recipeDiv>
+            <p>Search for any Recipe</p>
+            <form class="recipeForm" action="/recipeSearch" method="POST">
+                <input type="text" name="recipeSearch">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class=recipeDiv>
+            <p>max calories you need in meal, will tell you some cool recipe</p>
+            <form class="caloriesForm" action="/caloriesMeal" method="POST">
+                <input type="text" name="caloriesSearch">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class=recipeDiv>
+            <p>Maximum number of calories you need in a day, get some great recipes for three meals a day with the same number of calories you chose</p>
+            <form class="caloriesDayForm" action="/caloriesForDay" method="POST">
+                <input type="text" name="caloriesDaySearch">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class=exclude>
+            <p>Exclude the ingredient that causes you sensitivity OR YOu dont like it </p>
+            <form class="execludeForm" action="/execlude" method="POST">
+                <input type="text" name="execludeItem">
+                <button type="submit">Find</button>
+            </form>
+        </div>
+
+        <div class=include>
+            <p>Include the ingredient that You like it </p>
+            <form class="includeForm" action="/include" method="POST">
+                <input type="text" name="includeItem">
+                <button type="submit">Find</button>
+            </form>
+        </div>
+
+
+        <div>
+        <form class = "searchForm" action="/searches/new" method="POST">
+            <label class="searchWay"><input type="radio" name="searchWay" value="dessert">dessert</label>
+            <label class="searchWay"><input type="radio" name="searchWay" value="appetizer">appetizer</label>
+
+            <label class="searchWay"><input type="radio" name="searchWay" value="salad">salad</label>
+            <label class="searchWay"><input type="radio" name="searchWay" value="bread">bread</label>
+            <label class="searchWay"><input type="radio" name="searchWay" value="breakfast">breakfast</label>
+
+            <label class="searchWay"><input type="radio" name="searchWay" value="soup">soup</label>
+            <label class="searchWay"><input type="radio" name="searchWay" value="sauce">sauce</label>
+            <label class="searchWay"><input type="radio" name="searchWay" value="snack">snack</label>
+            <label class="searchWay"><input type="radio" name="searchWay" value="drink">drink</label>
+
+            <button type="submit">Search</button>
+        </form>
+       </div>
+
+    </main>
+</body>
+
+</html>

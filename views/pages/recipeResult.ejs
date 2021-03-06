@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="recipeItem">
+            <% recipeArray.forEach(element=>{ %>
+                <div class="divrecipe">
+                    <img src="<%= element.image%>" alt="">
+                    <h2>
+                        <%= element.label%>
+                    </h2>
+                    <p>
+                        ingredientLines: <%= element.ingredientLines%>
+                    </p>
+                    <p>
+                        calories: <%= element.calories %>
+                    </p>
+                    <p>
+                        fat: <%= element.fat %>
+                    </p>
+                    <p>
+                        Carbs: <%= element.Carbs %>
+                    </p>
+                    <p>
+                        Protein: <%= element.Protein %>
+                    </p>
+                    <p>
+                        Cholesterol: <%= element.Cholesterol %>
+                    </p>
+                </div>
+                <%}) %>
+        </div>
+    </main>
+</body>
+</html>
