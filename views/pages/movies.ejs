@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../movies.css">
+​
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+ 
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+​
+  
+    <div class="cards">
+  
+      
+  
+      </figure>
+      <% moviesArr.forEach(item =>{ %>
+        <figure class="card">
+        <img src="<%= item.image_url %>" alt="">
+        <figcaption style="text-shadow: 1px 1px 2px black;"><%= item.title %></figcaption>
+      </figure>
+    <% })%>
+  
+    </div>
+  
+ 
+  
+  </div>
+</body>
+</html>
+​
