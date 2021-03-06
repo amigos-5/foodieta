@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/card.css">
 </head>
 <body>
     <main>
         <div id="SearchPage">
-            <% searchArray.forEach(element=>{ %>
+            <!-- <% searchArray.forEach((element, index)=>{ %>
                 <div class="divSearch">
                     <img src="<%= element.image%>" alt="">
                     <h2>
@@ -22,8 +23,26 @@
                         summary: <%= element.summary %>
                     </p>
                 </div>
-                <%}) %>
+                <%}) %> -->
+
+                
+                <% searchArray.forEach(element=>{ %>
+                    <div class="card-container">
+                <div class="card u-clearfix">
+                    <img src="<%= element.image%>" alt="" class="card-media"/>
+
+                  <div class="card-body">
+                    <h2 class="card-title"> <%= element.title%></h2>
+                    <span class="card-description subtle">  <p class = "sumDes">instructions:</p><%= element.instructions%></span>
+                    <span class="card-description subtle"> <p class = "sumDes">summary: </p> <%= element.summary %></span>
+                  </div>
+                </div>
+                <div class="card-shadow"></div>
+              </div>
+              <%}) %>
         </div>
     </main>
 </body>
 </html>
+
+
