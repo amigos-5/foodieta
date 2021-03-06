@@ -316,6 +316,13 @@ function Recipe(data){
     this.instructions = data.instructions;
   }
 // http://localhost:3000/movies?search_query=salad
+
+
+app.get('/movieta',(req,res)=>{
+  res.render('./pages/movies');
+})
+
+
 function moviesHandiling(req, res) {
   let formated_query = req.query.search_query;
   const moviesAPIKey = process.env.MOVIE_API_KEY;
