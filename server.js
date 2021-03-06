@@ -222,7 +222,6 @@ function handleSearch(req, res) {
               console.log(count);
               count++;
               if(caloriesMealsArr.length === count){
-             res.render('./pages/execludeMeal', {execludeItem:arr});
           res.render('./pages/searchPage', {searchArray:arr});
         }
       })
