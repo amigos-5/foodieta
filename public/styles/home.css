@@ -365,7 +365,7 @@ main {
 .recipebtn:hover {
   padding: 10px 30px 15px 30px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 19px;
 }
 
 .recipebtn {
@@ -378,6 +378,7 @@ main {
   border: none;
   font-weight: bold;
   font-size: 17px;
+  transition: 0.5s;
 }
 /* ////////////////////horizental line///////////////////////////// */
 #a {
