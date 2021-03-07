@@ -13,7 +13,6 @@ html {
   width: 100%;
   scroll-behavior: smooth;
 }
-
 body {
   height: 100%;
   width: 100%;
@@ -23,7 +22,6 @@ body {
 body::-webkit-scrollbar-thumb{
 background-color: var(--darkyello);
 }
-
 a,
 .btn {
   text-decoration: none !important;
@@ -35,7 +33,6 @@ a,
   transition: all 0.3s ease-in-out;
   font-size: 15px;
 }
-
 /* ///////////////////////// HEADER ///////////////////////////// */
 header {
   display: table-row;
@@ -51,8 +48,7 @@ header {
   z-index: 100;
 }
 nav{
-  overflow: hidden;
-
+      overflow: hidden;
 }
 .navbar-nav {
   
@@ -69,7 +65,6 @@ nav{
   position: relative;
   z-index: 40;
 }
-
 .top-navbar .navbar {
   padding: 15px 0px;
   position: fixed;
@@ -84,7 +79,6 @@ nav{
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
   z-index: 100;
 }
-
 .top-navbar .navbar-light .navbar-nav .nav-link {
   color: #010101;
   font-size: 15px;
@@ -94,7 +88,6 @@ nav{
   text-transform: uppercase;
   font-family: var(--font);
 }
-
 .top-navbar .navbar-light .navbar-nav .nav-item .nav-link:hover {
   background: var(--darkyello);
   color: var(--white);
@@ -104,9 +97,7 @@ nav{
   color: var(--white);
   border-radius: 4px;
 }
-
 /* /////////////////////Slider////////////////////////// */
-
 main {
   /* display: table-row; */
   height: 100%;
@@ -129,7 +120,6 @@ main {
   box-shadow: rgb(6 24 44 / 40%) 0px 5px 6px 4px,
     rgb(6 24 44 / 65%) 0px 0px 8px -6px;
 }
-
 .textbox {
   color: var(--white);
   position: relative;
@@ -244,7 +234,6 @@ main {
   position: absolute;
   left: 18%;
   top: 570px;
-
   font-family: var(--font);
   font-weight: 100;
   color: var(--white);
@@ -253,8 +242,6 @@ main {
   padding: 15px 30px 15px 30px;
   font-weight: bold;
 }
-
-
 /* /////////////salad//////////  */
 .salad {
   margin-top: 56%;
@@ -322,7 +309,6 @@ main {
   padding: 10px 30px 15px 30px;
   font-weight: bold;
 }
-
 /* ////////////appetizers///////////  */
 .appe- {
   position: relative;
@@ -367,13 +353,11 @@ main {
   font-weight: bold;
   text-align: center;
 }
-
 .recipebtn:hover {
   padding: 10px 30px 15px 30px;
   font-weight: bold;
   font-size: 15px;
 }
-
 .recipebtn {
   background: var(--darkyello);
   border-radius: 4px;
@@ -477,7 +461,6 @@ main {
   z-index: 10;
   /* margin-top: 40px; */
 }
-
 .breadbtn {
   position: absolute;
   top: 108%;
@@ -528,7 +511,6 @@ main {
   width: 100%;
   height: 500px;
 }
-
 footer {
   padding-bottom: 20px ;
   height: 110px;
@@ -548,7 +530,6 @@ footer {
 .fig {
   font-size: 15px;
   color: var(--darkyello);
-
   margin-left: 5px;
 }
 footer p {
