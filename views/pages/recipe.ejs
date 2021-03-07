@@ -6,19 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/recipes.css">
 </head>
 
 <body>
     <main>
-        <div class=recipeDiv>
+        <!-- <div class=recipeDiv>
             <p>Search for any Recipe</p>
             <form class="recipeForm" action="/recipeSearch" method="POST">
                 <input type="text" name="recipeSearch">
                 <button style="visibility: hidden;" type="submit">Search</button>
             </form>
-        </div>
+        </div> -->
 
-        <form action="#">
+        <div class="navbar navbar-static-top navbar-inverse">
+            <div class="navbar-brand">Recipe Box</div>
+          </div>
+          <div class="my-modal modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Search for any Recipe</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <form class="recipeForm" action="/recipeSearch" method="POST">
+                        <input type="text" name="recipeSearch">
+                        <button style="visibility: hidden;" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container"></div>
+
+
+
+
+
+
+        <form action="">
             <div class=recipeDiv>
                 <p>max calories you need in meal, will tell you some cool recipe</p>
                 <form class="caloriesForm" action="/caloriesMeal" method="POST">
@@ -55,3 +83,16 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
