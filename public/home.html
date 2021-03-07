@@ -88,41 +88,47 @@
     <!-- first one  -->
     <section class="salad">
         <div><img src="images/salad.jpg" alt="" srcset=""></div>
-        <div class="salad-back"></div>
+        <div class="salad-back">
+            <h2>Recipes Section</h2>
+        </div>
         <div class="saladdesc">
             <h2>SALAD</h2>
             <p>The truth is, eating salad will generally help you live longer, and it’s not even in dispute.
-                Additional benefits of fiber is that it can lower blood pressure and reduce bad cholesterol levels. Then
-                there are all the other nutrients found in salad produce: the vitamins, antioxidants, and minerals, for
-                example.</p>
+                Additional benefits of fiber is that it can lower blood pressure and reduce bad cholesterol levels.</p>
             <form class="searchForm" action="/searches/new" method="POST">
                 <input hidden name="searchWay" value="salad">
                 <button class="recipebtn" type="submit">show more ...</button>
             </form>
         </div>
     </section>
+    <!-- second one  -->
     <div class="appe-">
-        <img src="images/appei.jpg" alt="" srcset="">
-        <div class="appetizers-desc">
-            <h2>Appetizers</h2>
-            <p>Use as an appetizer when eating.
-                Helps to fill the stomach when eating before starting to eat the main meal, which man feels full, which
-                limits the intake of foods that increase the body mass.
-            </p>
-            <form class="searchForm" action="/searches/new" method="POST">
-                <input hidden name="searchWay" value="appetizer">
-                <button class="recipebtn" type="submit">show more ...</button>
-            </form>
+        <div class="onepeice">
+            <img src="images/appei.jpg" alt="" srcset="">
+            <div class="appetizers-desc">
+                <h2>Appetizers</h2>
+                <p>Use as an appetizer when eating.
+                    Helps to fill the stomach when eating before starting to eat the main meal, which man feels full,
+                    which
+                    limits the intake of foods that increase the body mass.
+                </p>
+                <form class="searchForm" action="/searches/new" method="POST">
+                    <input hidden name="searchWay" value="appetizer">
+                    <button class="recipebtn" type="submit">show more ...</button>
+                </form>
+            </div>
         </div>
-        <img src="images/drinks.jpg" alt="" srcset="">
-        <div class="appetizers-desc">
-            <h2>Drinks</h2>
-            <p>Fresh juice floods your body with antioxidants that boost your immune system.
-            </p>
-            <form class="searchForm" action="/searches/new" method="POST">
-                <input hidden name="searchWay" value="drink">
-                <button class="recipebtn" type="submit">show more ...</button>
-            </form>
+        <div class="onepeice">
+            <img src="images/drinks.jpg" alt="" srcset="">
+            <div class="appetizers-desc">
+                <h2>Drinks</h2>
+                <p>Fresh juice floods your body with antioxidants that boost your immune system.
+                </p>
+                <form class="searchForm" action="/searches/new" method="POST">
+                    <input hidden name="searchWay" value="drink">
+                    <button class="recipebtn" type="submit">show more ...</button>
+                </form>
+            </div>
         </div>
     </div>
     <hr id="a">
@@ -173,7 +179,7 @@
 
 
 <footer>
-    <p>Copy rights are reserved &copy;</p>
+    <p>Copy rights are reserved by AMIGOS &copy;</p>
     <ul class="footerli">
         <li> <a href="https://www.yahoo.com"><i class="fas fa-envelope-square fig"></i></a></li>
         <li> <a href="https://www.twitter.com"><i class="fab fa-twitter fig"></i></a></li>

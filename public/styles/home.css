@@ -7,10 +7,11 @@
   --font: "Montserrat", sans-serif;
 }
 html {
-  max-width: 1349px;
+  /* max-width: 1349px; */
   /* min-height: 900px; */
   /* height: 100%; */
   width: 100%;
+
   scroll-behavior: smooth;
 }
 
@@ -104,7 +105,7 @@ header {
 
 main {
   /* display: table-row; */
-  height: 100%;
+  height: 96%;
   margin: 0 auto;
 }
 .slider,
@@ -128,22 +129,25 @@ main {
 .textbox {
   color: var(--white);
   position: relative;
-  top: 60%;
-  width: 40%;
-  height: 150px;
+  top: 50%;
+  left: 65%;
+  width: 35%;
+  height: 180px;
   align-items: center;
   border-radius: 10px;
   background-color: var(--darkgrey);
-  opacity: 0.5;
+  opacity: 0.7;
   font-weight: 100;
 }
 .textbox h2 {
+  width: 80%;
   position: absolute;
-  top: 30%;
-  left: 2%;
+  top: 27%;
+  left: 10%;
   font-family: var(--font);
-  text-align: left;
-  font-size: 25px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 25px;
 }
 .textbox p {
   position: absolute;
@@ -237,8 +241,8 @@ main {
   border-radius: 4px;
   padding: 10px 25px;
   position: absolute;
-  left: 18%;
-  top: 570px;
+  left: 80%;
+  top: 530px;
 
   font-family: var(--font);
   font-weight: 100;
@@ -251,89 +255,95 @@ main {
 
 /* /////////////salad//////////  */
 .salad {
-  margin-top: 56%;
+  margin-top: 60%;
   position: relative;
-  width: 100%;
-  height: 600px;
+  width: 90%;
+  height: 500px;
 }
 .salad img {
   position: absolute;
-  left: 70%;
+  left: 62%;
   top: 10%;
   width: 25%;
   z-index: 10;
 }
 .salad-back {
-  width: 60%;
-  height: 100%;
+  width: 40%;
+  height: 95%;
   position: absolute;
-  left: 24%;
+  left: 38%;
   box-sizing: border-box;
   background-color: var(--darkyello);
 }
+.salad-back h2{
+  font-size:35px; 
+  font-weight: bold;
+  margin:-75px 0px 0px 100px;
+  font-family: var(--font);
+}
 .saladdesc {
-  width: 45%;
+  width: 35%;
   height: 60%;
   position: absolute;
-  left: 13%;
-  top: 28%;
+  left: 32%;
+  top: 20%;
   box-sizing: border-box;
-  border: 3px solid var(--darkgrey);
-  box-shadow: rgb(6 24 44 / 40%) 0px 5px 6px 4px,
-    rgb(6 24 44 / 65%) 0px 0px 8px -6px;
+  /* border: 3px solid var(--darkgrey); */
+    /* box-shadow: rgb(6 24 44 / 40%) 0px 5px 6px 4px,
+    rgb(6 24 44 / 65%) 0px 0px 8px -6px; */
+    box-shadow:  rgb(6 24 44 / 56%) 0px 5px 6px 4px, rgb(6 24 44 / 111%) 0px 0px 8px -6px;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
   justify-items: center;
   background-color: var(--white);
+  z-index: 40;
 }
 .saladdesc h2 {
-  margin-top: 20px;
-  font-size: 40px;
+  margin-top: 35px;
+  font-size: 25px;
   font-family: var(--font);
   color: var(--darkgrey);
   font-weight: bold;
   text-shadow: 2px 2px var(--darkyello);
 }
 .saladdesc p {
-  width: 90%;
+  width: 85%;
   text-align: center;
   font-size: 20px;
   font-family: var(--font);
   color: var(--darkgrey);
   font-weight: 100;
-  margin: 10px 20px 0px 20px;
-}
-.saladdesc a {
-  background: var(--darkyello);
-  border-radius: 4px;
-  padding: 10px 30px;
-  margin-bottom: 10px;
-  font-family: var(--font);
-  font-weight: 100;
-  color: var(--white);
-}
-.saladdesc a:hover {
-  padding: 10px 30px 15px 30px;
+  margin: 10px 20px 30px 20px;
   font-weight: bold;
+  line-height: 25px;
 }
+
 
 /* ////////////appetizers///////////  */
 .appe- {
   position: relative;
-  top: 2%;
+  top: 1%;
   width: 100%;
   height: 300px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 40px;
   justify-items: center;
 }
-.appetizers-desc {
-  height: 90%;
-  box-sizing: border-box;
-  border: 3px solid var(--darkgrey);
+.appe- .onepeice{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 80%;
+  width: 95%;
   box-shadow: rgb(6 24 44 / 40%) 0px 5px 6px 4px,
     rgb(6 24 44 / 65%) 0px 0px 8px -6px;
+}
+.appetizers-desc {
+  width: 100%;
+  height: 80%;
+  box-sizing: border-box;
+  /* border: 3px solid var(--darkgrey); */
+  
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
   justify-items: center;
@@ -341,8 +351,8 @@ main {
   background-color: var(--white);
 }
 .appe- img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 80%;
   z-index: 10;
 }
 .appetizers-desc h2 {
@@ -351,6 +361,8 @@ main {
   font-family: var(--font);
   color: var(--darkgrey);
   font-weight: bold;
+  text-shadow: 2px 2px var(--darkyello);
+
 }
 .appetizers-desc p {
   font-size: 17px;
@@ -360,6 +372,7 @@ main {
   margin: 10px 20px 0px 20px;
   font-weight: bold;
   text-align: center;
+  line-height: 23px;
 }
 
 .recipebtn:hover {
@@ -383,7 +396,7 @@ main {
 /* ////////////////////horizental line///////////////////////////// */
 #a {
   position: relative;
-  top: 4%;
+  top: 2%;
   height: 5px;
   background-color: var(--darkgrey);
   border: 2px solid var(--darkgrey);
@@ -393,7 +406,7 @@ main {
 /* /////////// desserts/////////// */
 .desserts {
   position: relative;
-  top: 3.5%;
+  top: 1.7%;
   width: 100%;
   height: 560px;
   box-sizing: border-box;
@@ -423,18 +436,20 @@ main {
   text-shadow: 2px 2px var(--darkyello);
 }
 .desserts p {
-  font-size: 25px;
-  width: 80%;
+  font-size: 20px;
+  width: 65%;
   font-family: var(--font);
   color: var(--darkgrey);
   font-weight: 100;
   /* margin: 10px 20px 0px 20px; */
   text-align: center;
+  font-weight: bold;
+  line-height: 30px;
 }
 /* ////////////////////////////////horizental line///////////////////////////////////////// */
 #b {
   position: relative;
-  top: 3%;
+  top: 1.5%;
   height: 5px;
   background-color: var(--darkgrey);
   border: 2px solid var(--darkgrey);
@@ -444,7 +459,7 @@ main {
 /* //////////////////////////////bread and breackfast////////////////////////////////// */
 .bread {
   position: relative;
-  top: 5%;
+  top: 2.5%;
   width: 100%;
   height: 300px;
 }
@@ -488,7 +503,7 @@ main {
 /* //////////////////////////////////tasyiest food////////////////////////////////// */
 .tastiesfood {
   position: relative;
-  top: 8%;
+  top: 5%;
   width: 100%;
   height: 300px;
   display: grid;
@@ -496,7 +511,7 @@ main {
   justify-items: center;
 }
 .tastiesfood h2 {
-  margin-top: 20px;
+  margin-top: 50px;
   font-size: 30px;
   font-family: var(--font);
   color: var(--darkgrey);
@@ -511,10 +526,11 @@ main {
   font-weight: 100;
   /* margin: 10px 20px 0px 20px; */
   text-align: center;
+  line-height: 25px;
 }
 .lastimg {
   position: relative;
-  top: 6%;
+  top: 2%;
   left: 10%;
   width: 80%;
   min-height: 500px;
