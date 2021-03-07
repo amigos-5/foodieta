@@ -15,7 +15,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-    margin-top: 170px;
+    margin-top: 130px;
   
 }
 .img-wrapper
@@ -133,4 +133,31 @@ body {
 {
     color: #fff;
     background: rgba(255,255,255,0);
+}
+
+.logo2{
+   
+    margin-bottom: 3%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: 'Caveat', cursive;
+}
+.logo2 h1{
+    font-style: italic;
+    font-size: xx-large;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 50px;
+    color: #fcbc40;
+
+}
+.logo2 small{
+    font-size: smaller;
+    font-size: 25px;
+    margin-left: -10px;
+    color: black;
+
+    letter-spacing: 1px;
+
 }
