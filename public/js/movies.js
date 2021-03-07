@@ -15,19 +15,28 @@
 //   $(".wrapper2").hide();
 // });
 
+$( document ).ready(function() {
+  var abc = document.body.innerHTML;
+  var a = String(abc).replace(/\u200B/g,'');
+  document.body.innerHTML = a;
+});
+
 $(document).ready(function () {
   $("button").click(function (e) {
     e.preventDefault();
     var x = $("form").serializeArray();
     let y = x[0].value.split(" ");
+    
     console.log(y);
     $(".cards").empty();
     y.forEach(element => {
       let moviesArr = moviesHandiling(element);
 
     });
-    $(".wrapper").show();
+   
 
+    $(".wrapper").show();
+    $("#output").hide();
   });
 });
 
