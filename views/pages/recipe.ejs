@@ -29,7 +29,7 @@
                 <div class="collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item "><a class="nav-link" href="home.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/searches">Search</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#">Search</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" href="">Recipe</a></li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="/movieta" data-toggle="dropdown">Movieta</a>
@@ -37,7 +37,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/aboutus.html" id="dropdown-a">About</a>
                         </li>
-                        <li class="nav-item active"><a class="nav-link" href="#">Contact</a></li>
+                        <li class="nav-item "><a class="nav-link" href="/contact-us.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +54,7 @@
         <div class="basediv">
 
             <div class="navbar navbar-static-top navbar-inverse">
-                <div class="navbar-brand">Recipe Box</div>
+                <div  style="margin-left: 105px;" class="navbar-brand">Recipe Box</div>
             </div>
             <div class="my-modal modal fade">
                 <div class="modal-dialog">
@@ -65,7 +65,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <form class="recipeForm" action="/recipeSearch" method="POST">
-                                    <input type="text" name="recipeSearch" placeholder="Search for any Recipe">
+                                    <input type="text" name="recipeSearch" placeholder="Search Recipe">
                                     <button style="visibility: hidden;" type="submit">Search</button>
                                 </form>
                             </div>
@@ -73,18 +73,12 @@
                     </div>
                 </div>
             </div>
-            <div class="container"></div>
-
-
-
-
-
 
             <div class=recipeDiv>
                 <!-- <p>max calories you need in meal, will tell you some cool recipe</p> -->
                 <form class="caloriesForm" action="/caloriesMeal" method="POST">
                     <input type="text" name="caloriesSearch"
-                        placeholder="max calories you need in meal, will tell you some cool recipe">
+                        placeholder="Maximum Calories per Meal">
                     <button style="visibility: hidden;" type="submit">Search</button>
                 </form>
             </div>
@@ -94,7 +88,7 @@
                     same number of calories you chose</p> -->
                 <form class="caloriesDayForm" action="/caloriesForDay" method="POST">
                     <input type="text" name="caloriesDaySearch"
-                        placeholder="Maximum number of calories you need in a day">
+                        placeholder="Maximum Calories per Day">
                     <button style="visibility: hidden;" type="submit">Search</button>
                 </form>
             </div>
@@ -103,7 +97,7 @@
                 <!-- <p>Exclude the ingredient that causes you sensitivity OR YOu dont like it </p> -->
                 <form class="execludeForm" action="/execlude" method="POST">
                     <input type="text" name="execludeItem"
-                        placeholder="Exclude the ingredient that causes you sensitivity OR YOu dont like it">
+                        placeholder="Exclude Ingredient">
                     <button style="visibility: hidden;" type="submit">Find</button>
                 </form>
             </div>
@@ -111,7 +105,7 @@
             <div class=include>
                 <!-- <p>Include the ingredient that You like it </p> -->
                 <form class="includeForm" action="/include" method="POST">
-                    <input type="text" name="includeItem" placeholder="Include the ingredient that You like it">
+                    <input type="text" name="includeItem" placeholder="Include Ingredient">
                     <button style="visibility: hidden;" type="submit">Find</button>
                 </form>
             </div>

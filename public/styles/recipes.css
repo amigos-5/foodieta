@@ -9,7 +9,7 @@ body {
     font-size: 20px;
     margin: 0 auto;
     width: 100%;
-    height: 1000px;
+    /* height: 1000px; */
   }
 /*   
   .navbar-inverse {
@@ -34,12 +34,36 @@ body {
     background-color: forestgreen;
     border: none;
   } */
-  /* main{
-    width: 80%;
-    /* margin: 0 auto; */
-    /* box-sizing: border-box; }*/
+  main{
+    /* width: 80%; */
+    position: relative;
+    margin: 0 auto;
+    }
   .basediv{
+    position: absolute;
+     top: 150px;
+     left: 150px;
     height: 90%;
-    width: 60%;
     margin:auto;
+    display: grid;
+    grid-template-rows: repeat(6,1fr);
+    grid-gap: 20px;
   }
+  input{
+    height: 50px;
+    width: 320px;
+    text-align: center;
+    border: none;
+    background: #32170567;
+    color: rgba(252, 252, 252, 0.699);
+    font-weight: bold;
+    font-size: 15px;
+  }
+  input:focus{
+    outline: none;
+  }
+input::placeholder{
+  color: rgba(252, 252, 252, 0.5);
+  font-weight: normal;
+}
+
