@@ -202,7 +202,6 @@ app.post('/searches/new' , handleSearch);
 function handleSearch(req, res) {
   let searchWay = req.body.searchWay;
   let apiKey = process.env.apiKey;
-  // let url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${caloriesSearch0}`;
   let url = `https://api.spoonacular.com/recipes/complexSearch?type=${searchWay}&apiKey=${apiKey}`
   console.log(url);
   superagent.get(url).then (results => {
@@ -217,7 +216,18 @@ function handleSearch(req, res) {
         let mealsUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`;
         superagent.get(mealsUrl).then(results => {
           let mealsData = results.body;
-              const mealsObject = new Meal(mealsData);
+              let mealsObject = new Meal(mealsData);
+              if(mealsObject.summary){
+              mealsObject.summary= mealsObject.summary.replace(/<[^>]*>/g, '');
+              } else{
+                mealsObject.summary= "no summery provided for this recipe";
+              }
+
+              if(mealsObject.instructions){
+              mealsObject.instructions= mealsObject.instructions.replace(/<[^>]*>/g, '');
+              }else{
+                mealsObject.instructions= "no instructions provided for this recipe";
+              }
               arr.push(mealsObject);
               console.log(count);
               count++;
