@@ -12,9 +12,9 @@ div, textarea, input {
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 510px;
-  min-width: 324px;
+.contactcontainer {
+  max-width: 520px;
+  /* min-width: 324px; */
   margin: 50px auto 0px;
   background-color: #fff;
   border: 1px solid #cfcfcf;
@@ -78,9 +78,13 @@ h3 {
 .btn.btn-submit {
   background-color: #625261;
   border-bottom-color: #625261;
+  cursor: pointer;
+  border: 1px solid #625261;
 }
 .btn.btn-submit:hover {
-  background-color: #625261;
+  color: white;
+  background-color:#8c8c8c ;
+  border: 1px solid #625261;
 }
 
 form {
