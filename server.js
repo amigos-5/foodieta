@@ -149,7 +149,18 @@ function handleCaloriesSearch(req, res) {
         let mealsUrl = `https://api.spoonacular.com/recipes/${value}/information?apiKey=${apiKey}&includeNutrition=false`;
         superagent.get(mealsUrl).then(results => {
           let mealsData = results.body;
-              const mealsObject = new Meal(mealsData);
+              let mealsObject = new Meal(mealsData);
+              if(mealsObject.summary){
+                mealsObject.summary= mealsObject.summary.replace(/<[^>]*>/g, '');
+                } else{
+                  mealsObject.summary= "no summery provided for this recipe";
+                }
+  
+                if(mealsObject.instructions){
+                mealsObject.instructions= mealsObject.instructions.replace(/<[^>]*>/g, '');
+                }else{
+                  mealsObject.instructions= "no instructions provided for this recipe";
+                }
               arr.push(mealsObject);
               console.log(count);
               count++;
@@ -186,7 +197,18 @@ function handleCaloriesForDay(req, res) {
         let mealsUrl = `https://api.spoonacular.com/recipes/${value}/information?apiKey=${apiKey}&includeNutrition=false`;
         superagent.get(mealsUrl).then(results => {
           let mealsData = results.body;
-              const mealsObject = new Meal(mealsData);
+              let mealsObject = new Meal(mealsData);
+              if(mealsObject.summary){
+                mealsObject.summary= mealsObject.summary.replace(/<[^>]*>/g, '');
+                } else{
+                  mealsObject.summary= "no summery provided for this recipe";
+                }
+  
+                if(mealsObject.instructions){
+                mealsObject.instructions= mealsObject.instructions.replace(/<[^>]*>/g, '');
+                }else{
+                  mealsObject.instructions= "no instructions provided for this recipe";
+                }
               arr.push(mealsObject);
               console.log(count);
               count++;
@@ -256,7 +278,18 @@ superagent.get(url).then (results => {
     let execludeUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`;
     superagent.get(execludeUrl).then(results => {
       let execludeData = results.body;
-          const execludeObject = new Meal(execludeData);
+          let execludeObject = new Meal(execludeData);
+          if(execludeObject.summary){
+            execludeObject.summary= execludeObject.summary.replace(/<[^>]*>/g, '');
+            } else{
+              execludeObject.summary= "no summery provided for this recipe";
+            }
+
+            if(execludeObject.instructions){
+              execludeObject.instructions= execludeObject.instructions.replace(/<[^>]*>/g, '');
+            }else{
+              execludeObject.instructions= "no instructions provided for this recipe";
+            }
           arr.push(execludeObject);
           console.log(count);
           count++;
@@ -289,7 +322,18 @@ function includeHandler(req,res){
       superagent.get(includeUrl).then(results => {
   
         let includeData = results.body;
-            const includeObject = new Meal(includeData);
+            let includeObject = new Meal(includeData);
+            if(includeObject.summary){
+              includeObject.summary= includeObject.summary.replace(/<[^>]*>/g, '');
+              } else{
+                includeObject.summary= "no summery provided for this recipe";
+              }
+  
+              if(includeObject.instructions){
+                includeObject.instructions= includeObject.instructions.replace(/<[^>]*>/g, '');
+              }else{
+                includeObject.instructions= "no instructions provided for this recipe";
+              }
             arr.push(includeObject);
             console.log(count);
             count++;
