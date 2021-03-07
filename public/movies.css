@@ -61,6 +61,7 @@ body {
   font-family: "Alegreya Sans";
 }
 .wrapper {
+  min-height: 350px;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -244,4 +245,14 @@ font-weight: normal;
   margin-bottom: 25px;
   margin-left: 225px;
   font-family: "Montserrat", sans-serif ;
+}
+
+#output{
+  height: 350px;
+}
+input::placeholder{
+  font-weight: bolder;
+}
+input{
+  font-weight: bolder;
 }
