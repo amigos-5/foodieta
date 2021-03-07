@@ -2,18 +2,18 @@
 
 
 
-$(document).ready(function () {
-  $("a").click(function (event) {
-    console.log("we prevent it")
-    event.preventDefault();
-    let moviesArr = moviesHandiling("salad");
-    console.log(moviesArr)
-    $(".wrapper").show();
+// $(document).ready(function () {
+//   $("a").click(function (event) {
+//     console.log("we prevent it")
+//     event.preventDefault();
+//     let moviesArr = moviesHandiling("salad");
+//     console.log(moviesArr)
+//     $(".wrapper").show();
 
-  });
+//   });
 
-  $(".wrapper2").hide();
-});
+//   $(".wrapper2").hide();
+// });
 
 $(document).ready(function () {
   $("button").click(function (e) {
