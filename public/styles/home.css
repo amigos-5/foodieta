@@ -50,7 +50,12 @@ header {
   align-items: center;
   z-index: 100;
 }
+nav{
+  overflow: hidden;
+
+}
 .navbar-nav {
+  
   display: grid;
   grid-template-columns: repeat(6, 0.9fr);
   justify-items: center;
