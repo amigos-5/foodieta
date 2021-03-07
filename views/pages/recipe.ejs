@@ -6,11 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- favicon -->
+    <link rel="icon" href="logoused.ico" type="image/x-icon">
+    <!-- style -->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/recipes.css">
 </head>
 
 <body>
-    <main>
+    <header class="top-navbar" style="height: 100px;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="" />
+                </a>
+                <div class="collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item "><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/searches">Search</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="">Recipe</a></li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/movieta" data-toggle="dropdown">Movieta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/aboutus.html" id="dropdown-a">About</a>
+                        </li>
+                        <li class="nav-item active"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main style="margin-bottom: -180px;">
         <!-- <div class=recipeDiv>
             <p>Search for any Recipe</p>
             <form class="recipeForm" action="/recipeSearch" method="POST">
@@ -18,28 +51,29 @@
                 <button style="visibility: hidden;" type="submit">Search</button>
             </form>
         </div> -->
+        <div class="basediv">
 
-        <div class="navbar navbar-static-top navbar-inverse">
-            <div class="navbar-brand">Recipe Box</div>
-          </div>
-          <div class="my-modal modal fade">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">Search for any Recipe</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="form-group">
-                    <form class="recipeForm" action="/recipeSearch" method="POST">
-                        <input type="text" name="recipeSearch">
-                        <button style="visibility: hidden;" type="submit">Search</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
+            <div class="navbar navbar-static-top navbar-inverse">
+                <div class="navbar-brand">Recipe Box</div>
             </div>
-          </div>
-          <div class="container"></div>
+            <div class="my-modal modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <h4 class="modal-title">Search for any Recipe</h4> -->
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <form class="recipeForm" action="/recipeSearch" method="POST">
+                                    <input type="text" name="recipeSearch" placeholder="Search for any Recipe">
+                                    <button style="visibility: hidden;" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container"></div>
 
 
 
@@ -47,50 +81,42 @@
 
 
             <div class=recipeDiv>
-                <p>max calories you need in meal, will tell you some cool recipe</p>
+                <!-- <p>max calories you need in meal, will tell you some cool recipe</p> -->
                 <form class="caloriesForm" action="/caloriesMeal" method="POST">
-                    <input type="text" name="caloriesSearch">
+                    <input type="text" name="caloriesSearch"
+                        placeholder="max calories you need in meal, will tell you some cool recipe">
                     <button style="visibility: hidden;" type="submit">Search</button>
                 </form>
             </div>
-        
+
             <div class=recipeDiv>
-                <p>Maximum number of calories you need in a day, get some great recipes for three meals a day with the same number of calories you chose</p>
+                <!-- <p>Maximum number of calories you need in a day, get some great recipes for three meals a day with the
+                    same number of calories you chose</p> -->
                 <form class="caloriesDayForm" action="/caloriesForDay" method="POST">
-                    <input type="text" name="caloriesDaySearch">
-                    <button  style="visibility: hidden;" type="submit">Search</button>
+                    <input type="text" name="caloriesDaySearch"
+                        placeholder="Maximum number of calories you need in a day">
+                    <button style="visibility: hidden;" type="submit">Search</button>
                 </form>
             </div>
-        
+
             <div class=exclude>
-                <p>Exclude the ingredient that causes you sensitivity OR YOu dont like it </p>
+                <!-- <p>Exclude the ingredient that causes you sensitivity OR YOu dont like it </p> -->
                 <form class="execludeForm" action="/execlude" method="POST">
-                    <input type="text" name="execludeItem">
+                    <input type="text" name="execludeItem"
+                        placeholder="Exclude the ingredient that causes you sensitivity OR YOu dont like it">
                     <button style="visibility: hidden;" type="submit">Find</button>
                 </form>
             </div>
-        
+
             <div class=include>
-                <p>Include the ingredient that You like it </p>
+                <!-- <p>Include the ingredient that You like it </p> -->
                 <form class="includeForm" action="/include" method="POST">
-                    <input type="text" name="includeItem">
+                    <input type="text" name="includeItem" placeholder="Include the ingredient that You like it">
                     <button style="visibility: hidden;" type="submit">Find</button>
                 </form>
             </div>
+        </div>
     </main>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

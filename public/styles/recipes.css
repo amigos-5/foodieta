@@ -1,13 +1,17 @@
 body {
+  display: table;
     font-family: "Raleway", cursive;
-    background: url("https://s3.amazonaws.com/jc-static-assets/bkgrnd.jpg");
+    background: url("../images/searchrecipe.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     color: #fff;
     font-size: 20px;
+    margin: 0 auto;
+    width: 100%;
+    height: 1000px;
   }
-  
+/*   
   .navbar-inverse {
     background-color: rgba(0, 0, 0, 0.8);
     border-bottom: none;
@@ -29,4 +33,13 @@ body {
   .btn-primary {
     background-color: forestgreen;
     border: none;
+  } */
+  /* main{
+    width: 80%;
+    /* margin: 0 auto; */
+    /* box-sizing: border-box; }*/
+  .basediv{
+    height: 90%;
+    width: 60%;
+    margin:auto;
   }
