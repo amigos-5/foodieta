@@ -1,3 +1,5 @@
+
+
 .abs,
 h2:after,
 .cards .card figcaption,
@@ -54,6 +56,7 @@ h2 span {
   vertical-align: middle;
 }
 body {
+  position: relative;
   background: #24282f;
   font-family: "Alegreya Sans";
 }
@@ -214,4 +217,31 @@ h2:after {
 .news .article:active figcaption {
   opacity: 1;
   transform: none;
+}
+
+input{
+  height: 50px;
+  width: 600px;
+  text-align: center;
+  border: none;
+  background: #fcbd40;
+  color: rgba(252, 252, 252, 0.945);
+  /* font-weight: bold; */
+  font-size: 20px;
+  font-family:"Montserrat", sans-serif ;
+}
+input:focus{
+  outline: none;
+}
+input::placeholder{
+color: rgba(252, 252, 252, 0.774);
+font-weight: normal;
+}
+.login-form h1{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-left: 225px;
+  font-family: "Montserrat", sans-serif ;
 }
