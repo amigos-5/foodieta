@@ -2,8 +2,8 @@
 
 
 
-$(document).ready(function(){
-  $("a").click(function(event){
+$(document).ready(function () {
+  $("a").click(function (event) {
     console.log("we prevent it")
     event.preventDefault();
     let moviesArr = moviesHandiling("salad");
@@ -15,20 +15,21 @@ $(document).ready(function(){
   $(".wrapper2").hide();
 });
 
-$(document).ready(function() { 
-  $("button").click(function() { 
-      var x = $("form").serializeArray(); 
-     let y = x[0].value.split(" ");
-     console.log(y);
-     $(".cards").empty();
-     y.forEach(element => {
+$(document).ready(function () {
+  $("button").click(function (e) {
+    e.preventDefault();
+    var x = $("form").serializeArray();
+    let y = x[0].value.split(" ");
+    console.log(y);
+    $(".cards").empty();
+    y.forEach(element => {
       let moviesArr = moviesHandiling(element);
 
-     });
-     $(".wrapper").show();
+    });
+    $(".wrapper").show();
 
-  }); 
-}); 
+  });
+});
 
 
 
@@ -41,32 +42,32 @@ function moviesHandiling(req) {
 
   fetch(url)
     .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data.results.length)
+    .then((data) => {
+      console.log(data.results.length)
 
-        let handler = 3;
-        if(handler < data.results.length ){
-          handler = 4;
+      let handler = 3;
+      if (handler < data.results.length) {
+        handler = 4;
 
-        }else{
-          handler = data.results.length;
-        }
-        for(let i = 0 ; i < handler ; i++){
-          if(data.results[i].poster_path){
-            let x =new Movies(data.results[i])
-            x.render();
-            moveies.push(x);
-        }
-        }
-        console.log(handler)
-        return moveies
-      }).then((res)=>{
-        console.log(res);
-        return moveies
+      } else {
+        handler = data.results.length;
       }
-      )
-      // console.log(Object.values(moveies));
-      // return moveies
+      for (let i = 0; i < handler; i++) {
+        if (data.results[i].poster_path) {
+          let x = new Movies(data.results[i])
+          x.render();
+          moveies.push(x);
+        }
+      }
+      console.log(handler)
+      return moveies
+    }).then((res) => {
+      console.log(res);
+      return moveies
+    }
+    )
+  // console.log(Object.values(moveies));
+  // return moveies
 }
 function Movies(data) {
   this.title = data.title;
@@ -76,12 +77,12 @@ function Movies(data) {
   this.image_url = `https://image.tmdb.org/t/p/original${data.poster_path}`;
   this.popularity = data.popularity;
   this.released_on = data.release_date;
-  
+
 }
 Movies.prototype.render = function () {
   let template = $('#templateCard').html();
   console.log(this.title);
   let newObj = Mustache.render(template, this);
-  
+
   $('.cards').append(newObj);
 }
