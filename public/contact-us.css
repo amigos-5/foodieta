@@ -12,6 +12,9 @@ div, textarea, input {
   box-sizing: border-box;
 }
 
+main{
+  margin-top:170px ;
+}
 .contactcontainer {
   max-width: 520px;
   /* min-width: 324px; */
