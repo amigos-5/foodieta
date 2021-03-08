@@ -13,4 +13,4 @@ CREATE TABLE IF NOT EXISTS recipes (
   Cholesterol VARCHAR(255)
 );
 
---  psql -f data/recipe.sql -d foodita
+--  psql -f data/recipe.sql -d fodieta
