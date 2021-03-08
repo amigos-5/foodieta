@@ -479,12 +479,12 @@ app.post('/contactForm',(req,res) =>{
 app.get('/contactInfo',(req,res)=>{
   console.log(req.session.username);
   if( req.session.username == 'Farhan'){
-    let SQL = `SELECT firstname, lastname, comments FROM contactUs where userId=$1 ;`
-    let safeValues= [ req.session.username ];
+    let SQL = `SELECT firstname, lastname, comments FROM contactUs;`
+    // let safeValues= [ req.session.username ];
 
-    client.query(SQL,safeValues).then(result=>{
+    client.query(SQL).then(result=>{
       console.log(result.rows);
-      // res.render('./pages/contactInfo',{ savedList: result.rows});
+      res.render('./pages/contactInfo',{ searchArray: result.rows});
     });
   }else {
     res.redirect('/');
