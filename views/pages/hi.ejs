@@ -5,18 +5,23 @@
 <body>
   <img style="position: absolute; z-index: -10; height:700px; width:1349px; " src="../../imgSam/44.png" alt="">
   <%- include('../layout/header') %>
-<main style="height: 480px;margin-top: 70px;">    
-  <form action="/saved" method="GET">
-    <button type="submit">saved recipes</button>
+<main style="height: 480px;margin-top: 70px; text-align: center;position: relative;"> 
+  <form action="logout" method="POST">
+    <input style="background-color: whitesmoke; color:#fcbc40;float: left;position: absolute;top:-60px;left:90px;font-size: 13px;" class="recipebtn" type="submit" value="Logout">
   </form>
-  <form action="/savedOption" method="GET">
-    <button type="submit">saved</button>
+  <h1 style="text-transform: uppercase; font-size: 35px;color: whitesmoke; margin-bottom: 30px;">Hello  <%= username1 %></h1>   
+
+  <h1 style="font-size: 40px;color: #fcbc40;font-weight: bold;margin-bottom: 25px;">WELCOME TO FOODIETA</h1>
+  <h2 style="font-size: 20px;color: whitesmoke;margin-bottom: 25px;">Veiw Your Recipe by </h2>
+  <form style=" display: inline-block;" action="/saved" method="GET">
+    <button style="background-color: whitesmoke; color:#fcbc40 ;" class="recipebtn" type="submit">Title</button>
+  </form>
+  <form style=" display: inline-block;margin-left: 30px;" action="/savedOption" method="GET">
+    <button style="background-color: whitesmoke; color:#fcbc40;" class="recipebtn" type="submit">Selective</button>
   </form>
 
-  <h1>Hello <%= username1 %></h1>
-  <form action="logout" method="POST">
-    <input type="submit" value="Logout">
-  </form>
+  
+  
   </main>
   <%- include('../layout/footer') %>
 

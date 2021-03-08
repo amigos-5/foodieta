@@ -6,6 +6,9 @@
   --black: #000002;
   --font: "Montserrat", sans-serif;
 }
+*{
+  font-family: var(--font);
+}
 html {
   /* max-width: 1349px; */
   /* min-height: 900px; */
