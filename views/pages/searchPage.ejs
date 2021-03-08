@@ -14,6 +14,17 @@
                     <h2 class="card-title"> <%= element.title%></h2>
                     <span class="card-description subtle">  <p class = "sumDes">instructions:</p><%= element.instructions%></span>
                     <span class="card-description subtle"> <p class = "sumDes">summary: </p> <%= element.summary %></span>
+                    <section>
+                      <form id="create-form" action="/recipesOption" method="POST">
+                          <fieldset>
+                            <input hidden name="image" value = "<%= element.image%>">
+                            <input hidden name="title" value = "<%=element.title %>">
+                            <input hidden name="instructions" value = "<%= element.instructions %>" >
+                            <input hidden name="summary" value ="<%= element.summary %>" >
+                            <button id = "selectrecipe" class="recipebtn"  type="submit">Select</button>
+                          </fieldset>
+                        </form>
+                    </section>
                   </div>
                 </div>
                 <div class="card-shadow"></div>
@@ -24,5 +35,3 @@
     <%- include('../layout/footer') %>
 </body>
 </html>
-
-
