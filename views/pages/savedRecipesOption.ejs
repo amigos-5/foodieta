@@ -6,36 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/card.css">
-
 </head>
 <body>
     <main>
-        <div id="execludePage">
-            <% execludeItem.forEach(element=>{ %>
+        <div id="caloriesSearch">
+            <% savedList.forEach(element=>{ %>
                 <div class="card-container">
                     <div class="card u-clearfix">
                         <img src="<%= element.image%>" alt="" class="card-media"/>
-    
                       <div class="card-body">
                         <h2 class="card-title"> <%= element.title%></h2>
                         <span class="card-description subtle">  <p class = "sumDes">instructions:</p><%= element.instructions%></span>
                         <span class="card-description subtle"> <p class = "sumDes">summary: </p> <%= element.summary %></span>
-                        <section>
-                          <form id="create-form" action="/recipesOption" method="POST">
-                              <fieldset>
-                                <input hidden name="image" value = "<%= element.image%>">
-                                <input hidden name="title" value = "<%=element.title %>">
-                                <input hidden name="instructions" value = "<%= element.instructions %>" >
-                                <input hidden name="summary" value ="<%= element.summary %>" >
-                                <button id = "selectrecipe" type="submit">Select</button>
-                              </fieldset>
-                            </form>
-                        </section>
                       </div>
                     </div>
-                    <div class="card-shadow"></div>
+                    <div class="card-shadow">
+                    </div>
                   </div>
-                  <%}) %>
+         <%}) %>
         </div>
     </main>
 </body>
