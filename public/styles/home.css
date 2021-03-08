@@ -181,11 +181,11 @@ main {
   50% {
     visibility: hidden;
   }
-  75% {
-    visibility: hidden;
+  80% {
+    visibility: visible;
   }
   100% {
-    visibility: visible;
+    visibility:visible;
   }
 }
 @keyframes slide1 {
