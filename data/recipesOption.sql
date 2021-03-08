@@ -10,3 +10,4 @@ CREATE TABLE IF NOT EXISTS recipesOption(
 );
 
 --  psql -f data/recipesOption.sql -d fodita
+-- 337cb69caacc46f8a208b52edd1a748c
