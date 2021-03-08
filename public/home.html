@@ -9,6 +9,8 @@
     <!-- favicon -->
     <link rel="icon" href="logoused.ico" type="image/x-icon">
     <!-- style -->
+    <link rel="stylesheet" href="./login.css">
+
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/home.css">
     <!-- font awesome -->
@@ -78,10 +80,33 @@
                 <p>Amigos Team</p>
             </div>
         </section>
-        <button type="submit" class="btn-in"><a href="/">Sign In</a></button>
+        <button type="submit" id="myBtn" class="btn-in"><a>Sign In</a></button>
     </div>
     <!-- end slide  -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close"></span>
+        <h2>Login Form</h2>
+      </div>
+      <div class="modal-body">
+        <div class="login-form">
+          <form action="auth" method="POST">
+            <input type="text" name="username" placeholder="Username" required style="margin-bottom: 3px;">
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" class="recipebtn">
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h3><a href="./sign">Sign up</a></h3>
+      </div>
+    </div>
+  
+  </div>
 
 
     <!-- start recipes -->
@@ -188,6 +213,33 @@
     </ul>
 
 </footer>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 </body>
 
 </html>
