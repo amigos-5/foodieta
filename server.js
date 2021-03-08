@@ -25,12 +25,7 @@ app.use(express.static('./public'))
 app.use(methodOverride('_method'));
 app.get('/home',homeHandler);
 app.get('/', (req, res) => {
-  let SQL = `SELECT * FROM userinfo ORDER BY id DESC;`;
-  client.query(SQL)
-      .then((results) => {
-          // console.log(results.rows);
-          res.render('pages/index')
-      })
+  res.redirect('/home.html');
 });
 app.post('/auth', function(request, response) {
     var username = request.body.username;
@@ -40,16 +35,16 @@ app.post('/auth', function(request, response) {
     let values = [username, password];
     client.query(sql, values)
       .then((results) => {
-        console.log(results.rows);
+        // console.log(results.rows);
         let id = results.rows[0].id;
         arr0 = [];
         arr0.push(id);
         if (results.rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
-          console.log('request.session.username', id);
-          console.log( request.session.username)
-          console.log(username,password);
+          // console.log('request.session.username', id);
+          // console.log( request.session.username)
+          // console.log(username,password);
           response.render('pages/hi',{ username1: username });
         }else{
         response.render('pages/sign');
@@ -57,7 +52,7 @@ app.post('/auth', function(request, response) {
 
 }});
 function homeHandler(res,req){
-  console.log(res.session.loggedin)
+  // console.log(res.session.loggedin)
   if (res.session.loggedin) {
     req.render('pages/hi' ,{ username1: res.session.username});
         } else {
@@ -89,7 +84,7 @@ app.post('/signform', function(request, response) {
     let values = [username, password , email ];
     client.query(sql, values)
       .then((results) => {
-        console.log(results.rows);
+        // console.log(results.rows);
         if (results.rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
@@ -105,8 +100,8 @@ app.post('/signform', function(request, response) {
         arr0.push(id);
         request.session.loggedin = true;
         request.session.username = username;
-        console.log( request.session.username)
-        console.log(username,password)
+        // console.log( request.session.username)
+        // console.log(username,password)
        
         response.render('pages/hi',{ username1: username });
       })
@@ -123,17 +118,17 @@ function handleRecipeSearch(req, res) {
   let RECIPE_APPID = process.env.RECIPE_APPID;
   
   let url = `https://api.edamam.com/search?q=${recipeSearchWord}&app_id=${RECIPE_APPID}&app_key=${RECIPE_APPKey}`;
-  console.log(url);
+  // console.log(url);
   superagent.get(url).then (results => {
  
       let recipeData = results.body.hits;
-      console.log(recipeData);
+      // console.log(recipeData);
        
       let recipeArr = recipeData.map(value =>{
           const recipeObject = new Recipe(value.recipe);
           return recipeObject;
       })
-      console.log(recipeArr);
+      // console.log(recipeArr);
       res.render('./pages/recipeResult', {recipeArray:recipeArr});
   })
 }
@@ -144,13 +139,13 @@ function handleCaloriesSearch(req, res) {
   let apiKey = process.env.apiKey;
   // let url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${caloriesSearch0}`;
   let url = `https://api.spoonacular.com/recipes/complexSearch?maxCalories=${caloriesSearch0}&apiKey=${apiKey}`
-  console.log(url);
+  // console.log(url);
   superagent.get(url).then (results => {
       let caloriesDataMeals = results.body.results;
       let caloriesMealsArr = caloriesDataMeals.map(value =>{
           return value.id;
       })
-      console.log(caloriesMealsArr);
+      // console.log(caloriesMealsArr);
       let arr =[];
       let count = 0;
       let mealsArr = caloriesMealsArr.map(value =>{
@@ -170,7 +165,7 @@ function handleCaloriesSearch(req, res) {
                   mealsObject.instructions= "no instructions provided for this recipe";
                 }
               arr.push(mealsObject);
-              console.log(count);
+              // console.log(count);
               count++;
               if(caloriesMealsArr.length === count){
           res.render('./pages/caloriesPageResult', {mealsArray:arr});
@@ -186,19 +181,19 @@ function handleCaloriesForDay(req, res) {
   let apiKey = process.env.apiKey;
   let url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${apiKey}&timeFrame=day&targetCalories=${caloriesSearch0}`;
   // let url = `https://api.spoonacular.com/recipes/complexSearch?maxCalories=${caloriesSearch0}&apiKey=cb1c464d94f142c08b156c5beddade8b`
-  console.log(url);
+  // console.log(url);
   superagent.get(url).then (results => {
       let caloriesData0 = results.body.nutrients.calories;
       let caloriesData1 = results.body.nutrients.protein;
       let caloriesData2 = results.body.nutrients.fat;
       let caloriesData3 = results.body.nutrients.carbohydrates;
-      console.log(caloriesData0,caloriesData1,caloriesData2,caloriesData3);
+      // console.log(caloriesData0,caloriesData1,caloriesData2,caloriesData3);
       let caloriesDataMeals = results.body.meals;
        
       let caloriesMealsArr = caloriesDataMeals.map(value =>{
           return value.id;
       })
-      console.log(caloriesMealsArr);
+      // console.log(caloriesMealsArr);
       let arr =[];
       let count = 0;
       let mealsArr = caloriesMealsArr.map(value =>{
@@ -218,7 +213,7 @@ function handleCaloriesForDay(req, res) {
                   mealsObject.instructions= "no instructions provided for this recipe";
                 }
               arr.push(mealsObject);
-              console.log(count);
+              // console.log(count);
               count++;
               if(caloriesMealsArr.length === count){
           res.render('./pages/caloriesDayResult', {mealsForDayArray:arr});
@@ -233,13 +228,13 @@ function handleSearch(req, res) {
   let searchWay = req.body.searchWay;
   let apiKey = process.env.apiKey;
   let url = `https://api.spoonacular.com/recipes/complexSearch?type=${searchWay}&apiKey=${apiKey}`
-  console.log(url);
+  // console.log(url);
   superagent.get(url).then (results => {
       let caloriesDataMeals = results.body.results;
       let caloriesMealsArr = caloriesDataMeals.map(value =>{
           return value.id;
       })
-      console.log(caloriesMealsArr);
+      // console.log(caloriesMealsArr);
       let arr =[];
       let count = 0;
       let mealsArr = caloriesMealsArr.map(id =>{
@@ -259,7 +254,7 @@ function handleSearch(req, res) {
                 mealsObject.instructions= "no instructions provided for this recipe";
               }
               arr.push(mealsObject);
-              console.log(count);
+              // console.log(count);
               count++;
               if(caloriesMealsArr.length === count){
           res.render('./pages/searchPage', {searchArray:arr});
@@ -279,7 +274,7 @@ superagent.get(url).then (results => {
   let excludeplateArr = excludeplate.map(value =>{
       return value.id;
   })
-  console.log(excludeplateArr);
+  // console.log(excludeplateArr);
   let arr =[];
   let count = 0;
   let execludeArr = excludeplateArr.map(id =>{
@@ -299,7 +294,7 @@ superagent.get(url).then (results => {
               execludeObject.instructions= "no instructions provided for this recipe";
             }
           arr.push(execludeObject);
-          console.log(count);
+          // console.log(count);
           count++;
           if(excludeplateArr.length === count){
       res.render('./pages/execludeMeal', {execludeItem:arr});
@@ -343,7 +338,7 @@ function includeHandler(req,res){
                 includeObject.instructions= "no instructions provided for this recipe";
               }
             arr.push(includeObject);
-            console.log(count);
+            // console.log(count);
             count++;
             if(includeplateArr.length === count){
         res.render('./pages/includeMeal', {includeItem:arr});
@@ -420,7 +415,13 @@ function addRecipes (req, res){
   let SQL = `INSERT INTO recipes (userName, label, image, ingredientLines, calories, fat, Carbs, Protein, Cholesterol  ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id;`;
   let value = req.body;
   let safeValues= [ arr0[0],value.label,value.image,value.ingredientLines,value.calories,value.fat,value.Carbs,value.Protein,value.Cholesterol];
-  client.query(SQL,safeValues);
+  client.query(SQL,safeValues).then(()=>{
+    if (req.session.loggedin) {
+      res.render('pages/hi',{ username1: req.session.username });
+    }else{
+    res.redirect('/home.html');
+  }
+  })
 }
 
 app.get('/saved',(req,res)=>{
@@ -428,7 +429,8 @@ app.get('/saved',(req,res)=>{
   let safeValues= [ arr0[0] ];
   client.query(SQL,safeValues)
   .then (result=>{
-      // console.log(result.rows);
+    console.log(result.rows);
+
         res.render('./pages/savedRecipes', { savedList: result.rows})
   })
 });
@@ -448,7 +450,7 @@ app.get('/savedOption',(req,res)=>{
   let safeValues= [ arr0[0] ];
   client.query(SQL,safeValues)
   .then (result=>{
-      // console.log(result.rows);
+      console.log(result.rows);
         res.render('./pages/savedRecipesOption', { savedList: result.rows})
   })
 });
