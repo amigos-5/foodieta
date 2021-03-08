@@ -4,18 +4,18 @@
     margin: 0;
     padding: 0;
 }
-body{
+/* body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 .image-area
 {
-    width: 90%;
+    /* width: 90%; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-    margin-top: 130px;
+    /* margin-top: 130px; */
   
 }
 .img-wrapper
@@ -75,7 +75,7 @@ body{
 {
     transform: perspective(400px) rotateY(0deg);
 }
-body {
+.img-wrapper {
   overflow: hidden; /* Hide scrollbars */
 }
 .img-wrapper ul

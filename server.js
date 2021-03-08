@@ -48,8 +48,7 @@ app.post('/auth', function(request, response) {
           // console.log(username,password);
           response.render('pages/hi',{ username1: username });
         }else{
-        // response.render('pages/sign');
-       ('farhaaaan');
+        response.render('pages/sign');
       }})
 
 }});
@@ -73,8 +72,7 @@ function aboutHandler(req,res){
   res.render('pages/movies');}
 app.post('/logout',logoutHandler);
 function logoutHandler(req,res){
-  req.session.loggedin = false;
-  req.session.username = "";
+  req.session.destroy();
   res.redirect('/');
 }
 app.post('/signform', function(request, response) {

@@ -1,0 +1,168 @@
+body{
+  margin: 0;
+}
+@media only screen and ( min-width : 550px){
+  .contan{
+    display: grid;
+    /* height: 100vh; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 2.5fr 0.3fr;
+    grid-gap: 0.2rem;
+    grid-template-areas:
+     " farhan "
+     "image-area"
+     "footer" 
+     ;
+  }
+}
+
+header{
+  grid-area: farhan;
+  overflow: hidden;
+}
+main{
+  background-color: blueviolet;
+  grid-area: main;
+}
+.contan1{
+  background-color: brown;
+  grid-area: contan1;
+}
+.contan2{
+ 
+  
+  background: rgb(42, 110, 165);
+  grid-area: contan2;
+  
+
+}
+.contan3{
+  background-color: rgb(165, 42, 149);
+  grid-area: contan3;
+}
+footer{
+  height: 100%;
+  grid-area: footer;
+}
+.image-area{
+  margin-top: 20px;
+  grid-area: image-area;
+  justify-content: center;
+
+}
+
+@media only screen and ( max-width : 700px){
+  .contan{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 2.5fr 1fr;
+    grid-gap: 0.2rem;
+    grid-template-areas:
+     " farhan"
+     "image-area"
+     "footer";
+  }
+  main{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-left: 2em;
+  }
+  .collapse{
+    grid-area: collapse;
+    display: grid;
+
+    justify-items: left;
+    transform: scale(0.5);
+
+  }
+ 
+  .container{
+    display: grid;
+    height: 30px;
+
+    justify-items: left;
+    align-items: center;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows:  1fr;
+    grid-template-areas:"logocolor collapse";
+
+  }
+  .navbar-brand{
+    align-items: center;
+    margin-top: -15px;
+    grid-area: logocolor;
+    height: 30px;
+    transform: scale(0.5);
+
+  }
+  .navbar-nav {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 0.9fr);
+    justify-items: left;
+    align-items: left;
+    text-align: left;
+  }
+  
+}
+@media only screen and ( max-width : 540px){
+  .contan{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 5fr 1fr;
+    grid-gap: 0.2rem;
+    grid-template-areas:
+     " farhan"
+     "image-area"
+     "footer";
+  }
+  main{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-left: 2em;
+  }
+  .collapse{
+    grid-area: collapse;
+    display: grid;
+
+    justify-items: left;
+    transform: scale(0.3);
+
+  }
+ 
+  .container{
+    display: grid;
+    height: 30px;
+
+    justify-items: left;
+    align-items: center;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows:  1fr;
+    grid-template-areas:"logocolor collapse";
+
+  }
+  .navbar-brand{
+    align-items: center;
+
+    grid-area: logocolor;
+    height: 20px;
+    margin-top:-20px;
+    transform: scale(0.3);
+
+  }
+  .navbar-nav {
+    margin-top: 15px;
+    margin-left: -320px;
+    display: grid;
+    grid-template-columns: repeat(5, 0.9fr);
+    justify-items: left;
+    align-items: left;
+    text-align: left;
+  }
+  
+}
+
