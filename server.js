@@ -416,7 +416,7 @@ function Movies(data) {
 app.post('/recipes', addRecipes );
 
 function addRecipes (req, res){
-  console.log(req.body);
+  // console.log(req.body);
   let SQL = `INSERT INTO recipes (userName, label, image, ingredientLines, calories, fat, Carbs, Protein, Cholesterol  ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id;`;
   let value = req.body;
   let safeValues= [ arr0[0],value.label,value.image,value.ingredientLines,value.calories,value.fat,value.Carbs,value.Protein,value.Cholesterol];
@@ -428,10 +428,33 @@ app.get('/saved',(req,res)=>{
   let safeValues= [ arr0[0] ];
   client.query(SQL,safeValues)
   .then (result=>{
-      console.log(result.rows);
+      // console.log(result.rows);
         res.render('./pages/savedRecipes', { savedList: result.rows})
   })
 });
+
+    //......................................insert to database
+    app.post('/recipesOption', addRecipesOption);
+    
+function addRecipesOption (req, res){
+  // console.log(req.body);
+  let SQL = `INSERT INTO recipesOption (userId, title, image, instructions, summary) VALUES ($1,$2,$3,$4,$5)RETURNING id;`;
+  let value = req.body;
+  let safeValues= [ arr0[0],value.title,value.image,value.instructions,value.summary];
+  client.query(SQL,safeValues);
+}
+app.get('/savedOption',(req,res)=>{
+  let SQL = `SELECT title, image, instructions, summary FROM recipesOption where userId=$1 ;`
+  let safeValues= [ arr0[0] ];
+  client.query(SQL,safeValues)
+  .then (result=>{
+      // console.log(result.rows);
+        res.render('./pages/savedRecipesOption', { savedList: result.rows})
+  })
+});
+    
+
+
 
 client.connect()
     .then(() => {
@@ -439,3 +462,4 @@ client.connect()
             console.log(`listening on port ${PORT}`);
         });
     });
+    
