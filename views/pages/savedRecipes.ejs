@@ -11,7 +11,7 @@
 <body>
     <main>
         <div id="resultPage">
-            <% recipeArray.forEach(element=>{ %>
+            <% savedList.forEach(element=>{ %>
                 <div class="card-container">
             <div class="card u-clearfix">
                 <img src="<%= element.image%>" alt="" class="card-media"/>
@@ -24,23 +24,6 @@
                 <span class="card-description subtle"> <p>Carbs: <%= element.Carbs %></p></span>
                 <span class="card-description subtle"> <p>Protein: <%= element.Protein %></p></span>
                 <span class="card-description subtle"> <p>Cholesterol: <%= element.Cholesterol %></p></span>
-        
-              <section>
-                <form id="create-form" action="/recipes" method="POST">
-                    <fieldset>
-                      <input hidden name="image" value = "<%= element.image%>">
-                      <input hidden name="label" value = "<%= element.label %>">
-                      <input hidden name="ingredientLines" value = "<%= element.ingredientLines %>" >
-                      <input hidden name="calories" value ="<%= element.calories %>" >
-                      <input hidden name="fat" value ="<%= element.fat %>" >
-                      <input hidden name="Carbs" value ="<%= element.Carbs %>" >
-                      <input hidden name="Protein" value ="<%= element.Protein %>" >
-                      <input hidden name="Cholesterol" value ="<%= element.Cholesterol %>" >
-                      <button id = "selectBook" type="submit">Select</button>
-                    </fieldset>
-                  </form>
-              </section>
-
               </div>
             </div>
             <div class="card-shadow"></div>

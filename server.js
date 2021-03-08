@@ -1,4 +1,5 @@
 'use strict'
+let arr0 =[];
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -40,16 +41,20 @@ app.post('/auth', function(request, response) {
     client.query(sql, values)
       .then((results) => {
         console.log(results.rows);
+        let id = results.rows[0].id;
+        arr0 = [];
+        arr0.push(id);
         if (results.rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
+          console.log('request.session.username', id);
           console.log( request.session.username)
-          console.log(username,password)
+          console.log(username,password);
           response.render('pages/hi',{ username1: username });
         }else{
         response.render('pages/sign');
       }})
-    
+
 }});
 function homeHandler(res,req){
   console.log(res.session.loggedin)
@@ -91,10 +96,13 @@ app.post('/signform', function(request, response) {
           username += " you already have an account in our database!!"
           response.render('pages/hi',{ username1: username });
         }else{
-          let sql = 'INSERT INTO userInfo (userName, userEmail, userPass) VALUES ($1,$2,$3);';
+          let sql = 'INSERT INTO userInfo (userName, userEmail, userPass) VALUES ($1,$2,$3)RETURNING id;';
     let values = [username, email,password];
     client.query(sql, values)
       .then((results) => {
+        let id = results.rows[0].id;
+        arr0 = [];
+        arr0.push(id);
         request.session.loggedin = true;
         request.session.username = username;
         console.log( request.session.username)
@@ -403,6 +411,28 @@ function Movies(data) {
   this.released_on = data.release_date;
   
 }
+
+//......................................insert to database
+app.post('/recipes', addRecipes );
+
+function addRecipes (req, res){
+  console.log(req.body);
+  let SQL = `INSERT INTO recipes (userName, label, image, ingredientLines, calories, fat, Carbs, Protein, Cholesterol  ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id;`;
+  let value = req.body;
+  let safeValues= [ arr0[0],value.label,value.image,value.ingredientLines,value.calories,value.fat,value.Carbs,value.Protein,value.Cholesterol];
+  client.query(SQL,safeValues);
+}
+
+app.get('/saved',(req,res)=>{
+  let SQL = `SELECT label, image, ingredientLines, calories, fat, Carbs, Protein, Cholesterol FROM recipes where userName=$1 ;`
+  let safeValues= [ arr0[0] ];
+  client.query(SQL,safeValues)
+  .then (result=>{
+      console.log(result.rows);
+        res.render('./pages/savedRecipes', { savedList: result.rows})
+  })
+});
+
 client.connect()
     .then(() => {
         app.listen(PORT, () => {
