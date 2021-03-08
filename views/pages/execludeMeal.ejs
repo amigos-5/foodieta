@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/card.css">
-
-</head>
+  <%- include('../layout/head') %>
 <body>
-    <main>
+  <%- include('../layout/header') %>
+    <main style="height: 100%;margin-top: 70px;margin-bottom: -110px;">
         <div id="execludePage">
             <% execludeItem.forEach(element=>{ %>
                 <div class="card-container">
@@ -27,7 +21,7 @@
                                 <input hidden name="title" value = "<%=element.title %>">
                                 <input hidden name="instructions" value = "<%= element.instructions %>" >
                                 <input hidden name="summary" value ="<%= element.summary %>" >
-                                <button id = "selectrecipe" type="submit">Select</button>
+                                <button id = "selectrecipe" class="recipebtn"  type="submit">Select</button>
                               </fieldset>
                             </form>
                         </section>
@@ -38,5 +32,6 @@
                   <%}) %>
         </div>
     </main>
+    <%- include('../layout/footer') %>
 </body>
 </html>

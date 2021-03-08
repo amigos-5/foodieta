@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recipes</title>
+    <!-- favicon -->
+    <link rel="icon" href="logoused.ico" type="image/x-icon">
+    <!-- style -->
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/home.css">
+   
     <link rel="stylesheet" href="/styles/recipeCard.css">
-
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
 </head>
 <body>
+  <%- include('../layout/header') %>
     <main>
         <div id="resultPage">
             <% recipeArray.forEach(element=>{ %>
@@ -48,6 +61,7 @@
           <%}) %>
         </div>
     </main>
+    <%- include('../layout/footer') %>
 </body>
 </html>
 

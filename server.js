@@ -36,9 +36,9 @@ app.post('/auth', function(request, response) {
     client.query(sql, values)
       .then((results) => {
         // console.log(results.rows);
-        let id = results.rows[0].id;
-        arr0 = [];
-        arr0.push(id);
+        // let id = results.rows[0].id;
+        // arr0 = [];
+        // arr0.push(id);
         if (results.rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
@@ -47,7 +47,8 @@ app.post('/auth', function(request, response) {
           // console.log(username,password);
           response.render('pages/hi',{ username1: username });
         }else{
-        response.render('pages/sign');
+        // response.render('pages/sign');
+       ('farhaaaan');
       }})
 
 }});
@@ -443,7 +444,13 @@ function addRecipesOption (req, res){
   let SQL = `INSERT INTO recipesOption (userId, title, image, instructions, summary) VALUES ($1,$2,$3,$4,$5)RETURNING id;`;
   let value = req.body;
   let safeValues= [ arr0[0],value.title,value.image,value.instructions,value.summary];
-  client.query(SQL,safeValues);
+  client.query(SQL,safeValues).then(()=>{
+    if (req.session.loggedin) {
+      res.render('pages/hi',{ username1: req.session.username });
+    }else{
+    res.redirect('/home.html');
+  }
+  });
 }
 app.get('/savedOption',(req,res)=>{
   let SQL = `SELECT title, image, instructions, summary FROM recipesOption where userId=$1 ;`

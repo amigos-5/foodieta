@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/card.css">
-</head>
+  <%- include('../layout/head') %>
 <body>
-    <main>
+  <%- include('../layout/header') %>
+    <main style="height: 100%;margin-top: 70px;margin-bottom: -110px;">
         <div id="SearchPage">
                 <% searchArray.forEach(element=>{ %>
                     <div class="card-container">
@@ -26,6 +21,7 @@
               <%}) %>
         </div>
     </main>
+    <%- include('../layout/footer') %>
 </body>
 </html>
 
