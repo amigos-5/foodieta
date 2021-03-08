@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS contactUs (
   email VARCHAR(255),
   comments TEXT
 );
--- psql -f data/contactUs.sql -d foodita
+-- psql -f data/contactUs.sql -d loginuser
