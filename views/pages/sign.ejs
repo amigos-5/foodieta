@@ -11,22 +11,23 @@
 		}
 		.login-form h1 {
 			text-align: center;
-			color: #4d4d4d;
+			color: #fcbc40;
 			font-size: 24px;
 			padding: 20px 0 20px 0;
+			font-size: 35px;
 		}
 		.login-form input[type="password"],
 		.login-form input[type="text"] {
 			width: 100%;
 			padding: 15px;
 			border: 1px solid #dddddd;
-			margin-bottom: 15px;
+			margin-bottom: 30px;
 			box-sizing:border-box;
 		}
 		.login-form input[type="submit"] {
 			width: 100%;
 			padding: 15px;
-			background-color: #535b63;
+			background-color: #fcbc40;
 			border: 0;
 			box-sizing: border-box;
 			cursor: pointer;
@@ -34,17 +35,32 @@
 			color: #ffffff;
 		}
 		</style>
+		      <link rel="icon" href="logoused.ico" type="image/x-icon">
+					<!-- style -->
+					<link rel="stylesheet" href="/styles/reset.css">
+					<link rel="stylesheet" href="/styles/home.css">
+					<link rel="stylesheet" href="/styles/card.css">
+					<!-- font awesome -->
+					<script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+					<!-- google font -->
+					<link rel="preconnect" href="https://fonts.gstatic.com">
+					<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+		 
 	</head>
 	<body>
-		<img src="../imgSam/33.png">
-		<div class="login-form">
-			<h1>Sign In Form</h1>
+		<img src="../imgSam/33.png" style="position: absolute; z-index: -10; height: 850px; width: 100%;" >
+		<%- include('../layout/header') %>
+		<main style="height: 500px;">
+		<div class="login-form"  style="margin-top:100px ;">
+			<h1 style="margin-bottom: 30px;">Sign Up Form</h1>
 			<form action="signform" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
         <input type="text" name="email" placeholder="Email" required>
 				<input type="password" name="password" placeholder="Password" required>
-				<input type="submit">
+				<input type="submit" class="recipebtn">
 			</form>
 		</div>
+	</main>
+	<%- include('../layout/footer') %>
 	</body>
 </html>
