@@ -10,6 +10,7 @@ const methodOverride = require('method-override');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
+const { resolve4 } = require('dns');
 const client = new pg.Client(process.env.DATABASE_URL);
 // const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
 app.use(session({
@@ -415,7 +416,7 @@ function addRecipes (req, res){
   // console.log(req.body);
   let SQL = `INSERT INTO recipes (userName, label, image, ingredientLines, calories, fat, Carbs, Protein, Cholesterol  ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)RETURNING id;`;
   let value = req.body;
-  let safeValues= [ arr0[0],value.label,value.image,value.ingredientLines,value.calories,value.fat,value.Carbs,value.Protein,value.Cholesterol];
+  let safeValues= [ req.session.username,value.label,value.image,value.ingredientLines,value.calories,value.fat,value.Carbs,value.Protein,value.Cholesterol];
   client.query(SQL,safeValues).then(()=>{
     if (req.session.loggedin) {
       res.render('pages/hi',{ username1: req.session.username });
@@ -427,7 +428,7 @@ function addRecipes (req, res){
 
 app.get('/saved',(req,res)=>{
   let SQL = `SELECT label, image, ingredientLines, calories, fat, Carbs, Protein, Cholesterol FROM recipes where userName=$1 ;`
-  let safeValues= [ arr0[0] ];
+  let safeValues= [ req.session.username ];
   client.query(SQL,safeValues)
   .then (result=>{
     console.log(result.rows);
@@ -443,7 +444,7 @@ function addRecipesOption (req, res){
   // console.log(req.body);
   let SQL = `INSERT INTO recipesOption (userId, title, image, instructions, summary) VALUES ($1,$2,$3,$4,$5)RETURNING id;`;
   let value = req.body;
-  let safeValues= [ arr0[0],value.title,value.image,value.instructions,value.summary];
+  let safeValues= [ req.session.username,value.title,value.image,value.instructions,value.summary];
   client.query(SQL,safeValues).then(()=>{
     if (req.session.loggedin) {
       res.render('pages/hi',{ username1: req.session.username });
@@ -454,7 +455,7 @@ function addRecipesOption (req, res){
 }
 app.get('/savedOption',(req,res)=>{
   let SQL = `SELECT title, image, instructions, summary FROM recipesOption where userId=$1 ;`
-  let safeValues= [ arr0[0] ];
+  let safeValues= [ req.session.username ];
   client.query(SQL,safeValues)
   .then (result=>{
       console.log(result.rows);
@@ -462,8 +463,33 @@ app.get('/savedOption',(req,res)=>{
   })
 });
     
+//.................................contactDB
 
+app.post('/contactForm',(req,res) =>{
+  let SQL = `INSERT INTO contactUs (firstName, lastName, email, comments) VALUES ($1,$2,$3,$4);`;
+  let value = req.body;
+  let safeValues= [value.first_name,value.last_name,value.email,value.comments];
+  client.query(SQL,safeValues)
+  .then (result=>{
+      console.log(result.rows);
+        res.redirect('/');
+  })
+})
 
+app.get('/contactInfo',(req,res)=>{
+  console.log(req.session.username);
+  if( req.session.username == 'Farhan'){
+    let SQL = `SELECT firstname, lastname, comments FROM contactUs where userId=$1 ;`
+    let safeValues= [ req.session.username ];
+
+    client.query(SQL,safeValues).then(result=>{
+      console.log(result.rows);
+      // res.render('./pages/contactInfo',{ savedList: result.rows});
+    });
+  }else {
+    res.redirect('/');
+  }
+})
 
 client.connect()
     .then(() => {
