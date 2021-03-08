@@ -6,7 +6,7 @@ body{
     display: grid;
     /* height: 100vh; */
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 2.5fr 0.3fr;
+    grid-template-rows: 0.2fr 5.5fr 0.3fr;
     grid-gap: 0.2rem;
     grid-template-areas:
      " farhan "
