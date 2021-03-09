@@ -22,6 +22,8 @@ app.use(session({
     saveUninitialized: true
 }));
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.get('/movies', moviesHandiling);
@@ -500,7 +502,19 @@ app.get('/profile',(req,res)=>{
         }else{
         res.redirect('/');
       }})
-      
+
+//.............................................delete btn
+app.delete('/deleteRecipe/:label', deleteHandler);
+
+function deleteHandler(req,res) {
+  let SQL = `DELETE FROM recipes WHERE label=$1;`;
+  let value = [req.params.label];
+  client.query(SQL,value)
+  .then(()=>{
+    res.redirect('/saved');
+  })
+}
+
 client.connect()
     .then(() => {
         app.listen(PORT, () => {
