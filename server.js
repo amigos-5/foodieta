@@ -514,6 +514,16 @@ function deleteHandler(req,res) {
     res.redirect('/saved');
   })
 }
+app.delete('/deleteRecipeoptions/:title', deleteHandlerOption);
+
+function deleteHandlerOption(req,res){
+  let SQL = `DELETE FROM recipesOption WHERE title=$1;`;
+  let value = [req.params.title];
+  client.query(SQL,value)
+  .then(()=>{
+    res.redirect('/savedOption');
+  }) 
+}
 
 client.connect()
     .then(() => {
