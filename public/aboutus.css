@@ -8,6 +8,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 .image-area
 {
@@ -16,10 +17,12 @@ body{
   flex-wrap: wrap;
   justify-content: center;
     margin-top: 130px;
+    
   
 }
 .img-wrapper
 {
+
     width: 220px;
     height: 300px;
   margin: 10px;
@@ -38,6 +41,8 @@ body{
     z-index: 1;
     transform: skew(45deg);
     transition: .5s;
+    overflow: hidden; /* Hide scrollbars */
+
 }
 .img-wrapper:hover:before
 {
@@ -45,6 +50,7 @@ body{
 }
 .img-wrapper img
 {
+
     width: 220px;
     height: 300px;
     filter: grayscale(100%);
@@ -75,9 +81,9 @@ body{
 {
     transform: perspective(400px) rotateY(0deg);
 }
-body {
-  overflow: hidden; /* Hide scrollbars */
-}
+/* body {
+  overflow: hidden;
+} */
 .img-wrapper ul
 {
     position: absolute;
@@ -98,6 +104,8 @@ body {
     transform: perspective(800px) rotateY(90deg);
     transition: .5s;
     transform-origin: left;
+    overflow: hidden; /* Hide scrollbars */
+
 }
 .img-wrapper:hover ul li
 {
