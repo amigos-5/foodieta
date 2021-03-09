@@ -48,8 +48,7 @@ app.post('/auth', function(request, response) {
           // console.log(username,password);
           response.render('pages/hi',{ username1: username });
         }else{
-        // response.render('pages/sign');
-       ('farhaaaan');
+        response.render('pages/sign');
       }})
 
 }});
