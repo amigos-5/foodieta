@@ -22,8 +22,14 @@
 </head>
 <body>
   <%- include('../layout/header') %>
-    <main>
-        <div id="resultPage">
+    <main style="    overflow: hidden;
+    ">
+        <div id="resultPage" style="    display: flex;
+        width: 80%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px auto;
+    ">
             <% recipeArray.forEach(element=>{ %>
                 <div class="card-container">
             <div class="card u-clearfix">
