@@ -111,6 +111,32 @@ main {
   height: 96%;
   margin: 0 auto;
 }
+.user{
+  background-color: whitesmoke; 
+  color:#fcbc40;
+  float: left;
+  position: absolute;
+  top:110px;
+  left:90px;
+  font-size: 13px;
+  z-index: 50;
+  border-radius: 4px;
+  /* padding: 10px 25px; */
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  font-size: 12px;
+  transition: 0.5s;
+  width: 20px;
+  height: 5px;
+}
+.user:hover{
+  /* padding: 10px 25px; */
+  font-weight: bold;
+  font-size: 18px;
+  width: 100px;
+  height: 40px;
+}
 .slider,
 .slider1,
 .slider2,
