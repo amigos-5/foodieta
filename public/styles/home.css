@@ -56,7 +56,8 @@ header {
 }
 .user2{
   border: none;
-  background-color: whitesmoke;
+  background-color: var(--white);
+  margin-right: 40px;
 }
 .navbar-nav {
   display: grid;
@@ -168,8 +169,8 @@ main {
   height: 180px;
   align-items: center;
   border-radius: 10px;
-  background-color: var(--darkgrey);
-  opacity: 0.7;
+  background-color:#282828b9;
+  /* opacity: 0.7; */
   font-weight: 100;
 }
 .textbox h2 {
@@ -313,6 +314,7 @@ main {
   font-weight: bold;
   margin:-75px 0px 0px 100px;
   font-family: var(--font);
+  text-shadow: 2px 2px var(--darkyello);
 }
 .saladdesc {
   width: 35%;
@@ -556,7 +558,7 @@ main {
   width: 50%;
   font-family: var(--font);
   color: var(--darkgrey);
-  font-weight: 100;
+  font-weight: bold;
   /* margin: 10px 20px 0px 20px; */
   text-align: center;
   line-height: 25px;
@@ -564,13 +566,13 @@ main {
 .lastimg {
   position: relative;
   top: 6.7%;
-  left: 10%;
+  left: 13%;
   width: 80%;
   min-height: 500px;
 }
 .lastimg img {
-  width: 100%;
-  height: 500px;
+  width: 95%;
+  height: 600px;
 }
 
 footer {
@@ -581,6 +583,7 @@ footer {
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
+  align-items: center;
 }
 .footerli {
   height: 10px;
@@ -590,10 +593,12 @@ footer {
   align-items: center;
 }
 .fig {
-  font-size: 15px;
+
+  font-size: 20px;
   color: var(--darkyello);
 
   margin-left: 5px;
+  margin-top: 15px;
 }
 footer p {
   font-family: var(--font);
