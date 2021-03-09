@@ -90,7 +90,7 @@ app.post('/signform', function(request, response) {
     let values = [username, password , email ];
     client.query(sql, values)
       .then((results) => {
-        // console.log(results.rows);
+        console.log(results.rows);
         if (results.rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
