@@ -11,8 +11,9 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 const { resolve4 } = require('dns');
-const client = new pg.Client(process.env.DATABASE_URL);
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
+// const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
+
 app.use(session({
     secret: 'secret',
     resave: true,
