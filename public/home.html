@@ -48,13 +48,13 @@
 <!-- Slide start  -->
 <main style="height: 102%;">
     <form action="profile" method="GET">
-        <input  class="user" type="submit" value="Profile">
+        <input class="user" type="submit" value="Profile">
     </form>
     <div style="position: relative;">
         <section class="slider">
             <img src="images/a.jpg" alt="" class="slideimg">
             <div class="textbox">
-                <h2> " If you're not the one cooking, stay out of the way and go straight to our movies side."</h2>
+                <h2>"If you do not eat well, then you won’t be able to think well, love well, and sleep well"</h2>
                 <p>Amigos Team</p>
                 <!-- <button type="submit" class="btn-in"><a href="pages/sign"></a>Sign In</button> -->
 
@@ -63,7 +63,7 @@
         <section class="slider1">
             <img src="imgSam/img (3).jpg" alt="" class="slideimg">
             <div class="textbox">
-                <h2> "If you do not eat well, then you won’t be able to think well, love well, and sleep well."</h2>
+                <h2>"If you're not the one cooking, stay out of the way and go straight to our movies side."</h2>
                 <p>Amigos Team</p>
                 <!-- <button type="submit" class="btn-in"><a href="pages/sign"></a>Sign In</button> -->
             </div>
@@ -86,30 +86,30 @@
         <button type="submit" id="myBtn" class="btn-in"><a>Sign In</a></button>
     </div>
     <!-- end slide  -->
-<!-- The Modal -->
-<div id="myModal" class="modal">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close"></span>
-        <h2>Login Form</h2>
-      </div>
-      <div class="modal-body">
-        <div class="login-form">
-          <form action="auth" method="POST">
-            <input type="text" name="username" placeholder="Username" required style="margin-bottom: 3px;">
-            <input type="password" name="password" placeholder="Password" required><br>
-            <input type="submit" class="recipebtn">
-          </form>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close"></span>
+                <h2>Login Form</h2>
+            </div>
+            <div class="modal-body">
+                <div class="login-form">
+                    <form action="auth" method="POST">
+                        <input type="text" name="username" placeholder="Username" required style="margin-bottom: 3px;">
+                        <input type="password" name="password" placeholder="Password" required><br>
+                        <input type="submit" class="recipebtn">
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h3><a href="./sign">Sign up</a></h3>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <h3><a href="./sign">Sign up</a></h3>
-      </div>
+
     </div>
-  
-  </div>
 
 
     <!-- start recipes -->
@@ -219,30 +219,30 @@
 <script>
     // Get the modal
     var modal = document.getElementById("myModal");
-    
+
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
-    
+
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    
+
     // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-      modal.style.display = "block";
+    btn.onclick = function () {
+        modal.style.display = "block";
     }
-    
+
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-    
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
+    span.onclick = function () {
         modal.style.display = "none";
-      }
     }
-    </script>
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 
 </html>
