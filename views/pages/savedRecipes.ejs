@@ -1,81 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipes</title>
-  <!-- favicon -->
-  <link rel="icon" href="logoused.ico" type="image/x-icon">
-  <!-- style -->
-  <link rel="stylesheet" href="/styles/reset.css">
-  <link rel="stylesheet" href="/styles/home.css">
-
-  <link rel="stylesheet" href="/styles/recipeCard.css">
-
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
-  <!-- google font -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <!-- favicon -->
+    <link rel="icon" href="logoused.ico" type="image/x-icon">
+    <!-- style -->
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/home.css">
+   
+    <link rel="stylesheet" href="/styles/recipeCard.css">
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
 </head>
-
 <body>
   <%- include('../layout/header') %>
     <main style="height: 100%;margin-top: 70px; min-height: 600px; overflow: hidden;">
-      <div id="resultPage" style="    display: flex;
+        <div id="resultPage" style="    display: flex;
         width: 80%;
         flex-wrap: wrap;
         justify-content: center;
         margin: 20px auto;
     ">
-        <% savedList.forEach(element=>{ %>
-          <div class="card-container">
+            <% savedList.forEach(element=>{ %>
+                <div class="card-container">
             <div class="card u-clearfix">
-              <img src="<%= element.image%>" alt="" class="card-media" />
-
+                <img src="<%= element.image%>" alt="" class="card-media"/>
+        
               <div class="card-body">
-                <h2 class="card-title">
-                  <%= element.label%>
-                </h2>
-                <span class="card-description subtle">
-                  <p class="sumDes">ingredientLines: <%= element.ingredientlines%>
-                </span>
-                <span class="card-description subtle">
-                  <p>calories: <%= element.calories %>
-                  </p>
-                </span>
-                <span class="card-description subtle">
-                  <p>fat: <%= element.fat %>
-                  </p>
-                </span>
-                <span class="card-description subtle">
-                  <p>Carbs: <%= element.carbs %>
-                  </p>
-                </span>
-                <span class="card-description subtle">
-                  <p>Protein: <%= element.protein %>
-                  </p>
-                </span>
-                <span class="card-description subtle">
-                  <p>Cholesterol: <%= element.cholesterol %>
-                  </p>
-                </span>
+                <h2 class="card-title"> <%= element.label%></h2>
+                <span class="card-description subtle"> <p class = "sumDes">ingredientLines: <%= element.ingredientlines%></span>
+                <span class="card-description subtle"> <p>calories: <%= element.calories %></p></span>
+                <span class="card-description subtle"> <p>fat: <%= element.fat %></p></span>
+                <span class="card-description subtle"> <p>Carbs: <%= element.carbs %></p></span>
+                <span class="card-description subtle"> <p>Protein: <%= element.protein %></p></span>
+                <span class="card-description subtle"> <p>Cholesterol: <%= element.cholesterol %></p></span>
 
-                <span class="card-description subtle">
-                  <form action="/deleteRecipe/?_method=delete" method="post">
+                <div id = "button_form">
+                  <form action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
                     <button class="recipebtn">Delete</button>
                   </form>
-                </span>
               </div>
-              <div class="card-shadow"></div>
             </div>
-            <%}) %>
+            <div class="card-shadow"></div>
           </div>
+          <%}) %>
+        </div>
     </main>
     <%- include('../layout/footer') %>
 </body>
-
 </html>
+
