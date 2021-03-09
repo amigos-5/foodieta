@@ -36,7 +36,7 @@
         
               <div class="card-body">
                 <h2 class="card-title"> <%= element.label%></h2>
-                <span class="card-description subtle"> <p class = "sumDes">ingredientLines: <%= element.ingredientlines%></span>
+                <span class="card-description subtle"> <p class = "sumDes">ingredientLines: <%= element.ingredientlines%></p></span>
                 <span class="card-description subtle"> <p>calories: <%= element.calories %></p></span>
                 <span class="card-description subtle"> <p>fat: <%= element.fat %></p></span>
                 <span class="card-description subtle"> <p>Carbs: <%= element.carbs %></p></span>
@@ -51,8 +51,9 @@
             </div>
             <div class="card-shadow"></div>
           </div>
-          <%}) %>
         </div>
+
+          <%}) %>
     </main>
     <%- include('../layout/footer') %>
 </body>
