@@ -500,7 +500,7 @@ app.get('/profile',(req,res)=>{
   if( req.session.loggedin){
     res.render('pages/hi',{ username1:req.session.username});
         }else{
-        res.redirect('/');
+        res.redirect('/sign');
       }})
 
 //.............................................delete btn
