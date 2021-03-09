@@ -11,8 +11,8 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var path = require('path');
 const { resolve4 } = require('dns');
-// const client = new pg.Client(process.env.DATABASE_URL);
-const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
+const client = new pg.Client(process.env.DATABASE_URL);
+// const client = new pg.Client({ connectionString: process.env.DATABASE_URL,   ssl: { rejectUnauthorized: false } });
 
 app.use(session({
     secret: 'secret',
@@ -491,6 +491,14 @@ app.get('/contactInfo',(req,res)=>{
   }
 })
 
+////////////////////////////////////////////////////////////////////////profile btn
+app.get('/profile',(req,res)=>{
+  if( req.session.loggedin){
+    res.render('pages/hi',{ username1:req.session.username});
+        }else{
+        res.redirect('/');
+      }})
+      
 client.connect()
     .then(() => {
         app.listen(PORT, () => {
