@@ -258,7 +258,7 @@ main {
 
 /* /////////////salad//////////  */
 .salad {
-  margin-top: 60%;
+  margin-top: 62%;
   position: relative;
   width: 90%;
   height: 500px;
@@ -325,12 +325,12 @@ main {
 /* ////////////appetizers///////////  */
 .appe- {
   position: relative;
-  top: 1%;
+  top: 2.5%;
   width: 100%;
   height: 300px;
   display: grid;
   grid-template-columns: repeat(2, 2fr);
-  grid-gap: 40px;
+  grid-gap: 20px;
   justify-items: center;
 }
 .appe- .onepeice{
@@ -399,7 +399,7 @@ main {
 /* ////////////////////horizental line///////////////////////////// */
 #a {
   position: relative;
-  top: 2%;
+  top: 4.5%;
   height: 5px;
   background-color: var(--darkgrey);
   border: 2px solid var(--darkgrey);
@@ -409,7 +409,7 @@ main {
 /* /////////// desserts/////////// */
 .desserts {
   position: relative;
-  top: 1.7%;
+  top: 4%;
   width: 100%;
   height: 560px;
   box-sizing: border-box;
@@ -452,7 +452,7 @@ main {
 /* ////////////////////////////////horizental line///////////////////////////////////////// */
 #b {
   position: relative;
-  top: 1.5%;
+  top: 3.7%;
   height: 5px;
   background-color: var(--darkgrey);
   border: 2px solid var(--darkgrey);
@@ -462,7 +462,7 @@ main {
 /* //////////////////////////////bread and breackfast////////////////////////////////// */
 .bread {
   position: relative;
-  top: 2.5%;
+  top: 5.7%;
   width: 100%;
   height: 300px;
 }
@@ -506,7 +506,7 @@ main {
 /* //////////////////////////////////tasyiest food////////////////////////////////// */
 .tastiesfood {
   position: relative;
-  top: 5%;
+  top: 9%;
   width: 100%;
   height: 300px;
   display: grid;
@@ -523,7 +523,7 @@ main {
 }
 .tastiesfood p {
   font-size: 20px;
-  width: 60%;
+  width: 50%;
   font-family: var(--font);
   color: var(--darkgrey);
   font-weight: 100;
@@ -533,7 +533,7 @@ main {
 }
 .lastimg {
   position: relative;
-  top: 2%;
+  top: 6.7%;
   left: 10%;
   width: 80%;
   min-height: 500px;
