@@ -481,7 +481,7 @@ app.post('/contactForm',(req,res) =>{
 app.get('/contactInfo',(req,res)=>{
   console.log(req.session.username);
   if( req.session.username == 'Farhan'){
-    let SQL = `SELECT firstname, lastname, comments FROM contactUs;`
+    let SQL = `SELECT * FROM contactUs;`
     // let safeValues= [ req.session.username ];
 
     client.query(SQL).then(result=>{
