@@ -42,6 +42,11 @@
                 <span class="card-description subtle"> <p>Carbs: <%= element.carbs %></p></span>
                 <span class="card-description subtle"> <p>Protein: <%= element.protein %></p></span>
                 <span class="card-description subtle"> <p>Cholesterol: <%= element.cholesterol %></p></span>
+
+                <div id = "button_form">
+                  <form action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
+                    <button class="recipebtn">Delete</button>
+                  </form>
               </div>
             </div>
             <div class="card-shadow"></div>
