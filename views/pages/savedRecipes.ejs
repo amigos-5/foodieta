@@ -22,8 +22,13 @@
 </head>
 <body>
   <%- include('../layout/header') %>
-    <main style="height: 100%;margin-top: 70px; min-height: 600px;">
-        <div id="resultPage">
+    <main style="height: 100%;margin-top: 70px; min-height: 600px; overflow: hidden;">
+        <div id="resultPage" style="    display: flex;
+        width: 80%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 20px auto;
+    ">
             <% savedList.forEach(element=>{ %>
                 <div class="card-container">
             <div class="card u-clearfix">
