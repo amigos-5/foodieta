@@ -44,9 +44,27 @@
                 <span class="card-description subtle"> <p>Cholesterol: <%= element.cholesterol %></p></span>
 
                 <div id = "button_form">
-                  <form action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
+                  <form style="display: inline-block;" action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
                     <button class="recipebtn">Delete</button>
                   </form>
+                  <button class="updateBtn recipebtn" class="recipebtn">Update</button>
+              </div>
+
+              <div class="updateForm">
+                <form action="/update/<%= element.label %>?_method=put" method="POST">
+                  <fieldset>
+                  <legend> Update Recipe </legend>
+                  <input type="text" name="label" value=" <%= element.label%>">
+                  <input type="text" name="calories" value="<%= element.calories%>">
+                  <input type="text" name="fat" value="<%= element.fat%>">
+                  <input type="text" name="carbs" value="<%= element.carbs%>">
+                  <input type="text" name="protein" value="<%= element.protein%>">
+                  <input type="text" name="cholesterol" value="<%= element.cholesterol%>">
+
+                  <textarea name="ingredientLines" cols="30" rows="10"><%= element.ingredientlines%> </textarea>
+                  <button>Update Recipe</button>
+                </fieldset>
+                </form>
               </div>
             </div>
             <div class="card-shadow"></div>
@@ -55,6 +73,8 @@
 
           <%}) %>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="./js/app.js"></script>
     <%- include('../layout/footer') %>
 </body>
 </html>
