@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../layout/head') %>
-<body>
+<body style="background-color: rgba(255, 206, 71, 0.445);">
   <%- include('../layout/header') %>
     <main style="height: 100%;margin-top: 70px;margin-bottom: -110px; min-height: 600px;">
         <div id="caloriesSearch">
@@ -14,9 +14,22 @@
                         <span class="card-description subtle">  <p class = "sumDes">instructions:</p><%= element.instructions%></span>
                         <span class="card-description subtle"> <p class = "sumDes">summary: </p> <%= element.summary %></span>
                         <div id = "button_form">
-                          <form action="/deleteRecipeoptions/<%= element.title %>?_method=delete" method="post">
+                          <form style="display: inline-block;" action="/deleteRecipeoptions/<%= element.title %>?_method=delete" method="post">
                             <button class="recipebtn">Delete</button>
                           </form>
+                          <button class="updateBtn1 recipebtn" class="recipebtn">Update</button>
+                      </div>
+
+                      <div class="updateForm1 form-popup">
+                        <form action="/updateRecipe/<%= element.title %>?_method=put" method="POST" class="form-container">
+                          <fieldset>
+                          <legend> Update Recipe </legend>
+                          <input type="text" name="title" value=" <%= element.title%>">
+                          <textarea name="instructions" cols="30" rows="10"><%= element.instructions%> </textarea>
+                          <textarea name="summary" cols="30" rows="10"><%= element.summary%> </textarea>
+                          <button class="btn">Update Recipe</button>
+                        </fieldset>
+                        </form>
                       </div>
                       </div>
                     </div>
@@ -26,6 +39,8 @@
          <%}) %>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="./js/app.js"></script>
     <%- include('../layout/footer') %>
 </body>
 </html>

@@ -90,7 +90,7 @@ app.post('/signform', function(request, response) {
     let values = [username, password , email ];
     client.query(sql, values)
       .then((results) => {
-        // console.log(results.rows);
+        console.log(results.rows);
         if (results.rows.length > 0) {
           request.session.loggedin = true;
           request.session.username = username;
@@ -500,7 +500,7 @@ app.get('/profile',(req,res)=>{
   if( req.session.loggedin){
     res.render('pages/hi',{ username1:req.session.username});
         }else{
-        res.redirect('/');
+        res.redirect('/sign');
       }})
 
 //.............................................delete btn
@@ -525,10 +525,40 @@ function deleteHandlerOption(req,res){
   }) 
 }
 
+//............................................................update btn
+app.put('/update/:label', updateHandler);
+
+function updateHandler(req, res) {
+  console.log(req.body);
+  let { label, calories, fat, carbs,protein,cholesterol,ingredientLines} = req.body;
+  // console.log(title,status);
+  let SQL = `UPDATE recipes SET label=$1,calories=$2,fat=$3,Carbs=$4,Protein=$5,Cholesterol=$6,ingredientLines=$7 WHERE label =$8;`;
+  let values = [label, calories, fat, carbs,protein,cholesterol,ingredientLines, req.params.label];
+  client.query(SQL, values)
+    .then(() => {
+      res.redirect(`/saved`);
+    });
+}
+
+//..........
+
+app.put('/updateRecipe/:title',updateRecipeHandler);
+
+function updateRecipeHandler(req, res) {
+  console.log(req.body);
+  let { title, instructions, summary} = req.body;
+  // console.log(title,status);
+  let SQL = `UPDATE recipesOption SET title=$1,instructions=$2,summary=$3 WHERE title =$4;`;
+  let values = [title, instructions, summary, req.params.title];
+  client.query(SQL, values)
+    .then(() => {
+      res.redirect(`/savedOption`);
+    });
+}
+
 client.connect()
     .then(() => {
         app.listen(PORT, () => {
             console.log(`listening on port ${PORT}`);
         });
     });
-    

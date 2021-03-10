@@ -46,18 +46,21 @@
 					<!-- google font -->
 					<link rel="preconnect" href="https://fonts.gstatic.com">
 					<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-		 
+					<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
 		<img src="../imgSam/33.png" style="position: absolute; z-index: -10; height: 850px; width: 100%;" >
 		<%- include('../layout/header') %>
 		<main style="height: 500px;">
 		<div class="login-form2"  style="margin-top:100px ;">
-			<h1 style="margin-bottom: 30px;">Sign Up Form</h1>
+			<h1 style="margin-bottom: 4px;">Sign Up Form</h1>
 			<form action="signform" method="POST">
 				<input type="text" name="username" placeholder="Username" required>
         <input type="text" name="email" placeholder="Email" required>
 				<input type="password" name="password" placeholder="Password" required>
+				<div  class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" ></div>
+				<div id="g-recaptcha-error" style="margin-bottom: 10px;"></div>
+
 				<input type="submit" class="recipebtn" value="Sign UP">
 			</form>
 			<button style="background: none; border: none; margin-top: 10px; color: whitesmoke; cursor: pointer;" type="submit"  id="myBtn" ><a>Already have account?</a></button>
