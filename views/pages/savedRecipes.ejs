@@ -43,9 +43,11 @@
     </style>
     
 </head>
-<body>
+<body style=" background-color: #f7f1f1;">
   <%- include('../layout/header') %>
-    <main style="height: 100%;margin-top: 70px; min-height: 1000px; overflow: hidden;">
+    <main style="height: 100%;margin-top: 70px; min-height: 1000px; overflow: hidden;  background-color: #f7f1f1;">
+      <h2 class="titleres">Favourite Recipes</h2>
+
         <div id="resultPage" style="    display: flex;
         width: 80%;
         flex-wrap: wrap;
@@ -53,6 +55,8 @@
         margin: 20px auto;
         background-color: #f7f1f1;
     ">
+    
+  
             <% savedList.forEach(element=>{ %>
                 <div class="card-container">
             <div class="card u-clearfix">
