@@ -20,14 +20,14 @@
                           <button class="updateBtn1 recipebtn" class="recipebtn">Update</button>
                       </div>
 
-                      <div class="updateForm1">
-                        <form action="/updateRecipe/<%= element.title %>?_method=put" method="POST">
+                      <div class="updateForm1 form-popup">
+                        <form action="/updateRecipe/<%= element.title %>?_method=put" method="POST" class="form-container">
                           <fieldset>
                           <legend> Update Recipe </legend>
                           <input type="text" name="title" value=" <%= element.title%>">
                           <textarea name="instructions" cols="30" rows="10"><%= element.instructions%> </textarea>
                           <textarea name="summary" cols="30" rows="10"><%= element.summary%> </textarea>
-                          <button>Update Recipe</button>
+                          <button class="btn">Update Recipe</button>
                         </fieldset>
                         </form>
                       </div>

@@ -50,8 +50,8 @@
                   <button class="updateBtn recipebtn" class="recipebtn">Update</button>
               </div>
 
-              <div class="updateForm">
-                <form action="/update/<%= element.label %>?_method=put" method="POST">
+              <div class="updateForm form-popup">
+                <form action="/update/<%= element.label %>?_method=put" method="POST" class="form-container">
                   <fieldset>
                   <legend> Update Recipe </legend>
                   <input type="text" name="label" value=" <%= element.label%>">
@@ -62,7 +62,7 @@
                   <input type="text" name="cholesterol" value="<%= element.cholesterol%>">
 
                   <textarea name="ingredientLines" cols="30" rows="10"><%= element.ingredientlines%> </textarea>
-                  <button>Update Recipe</button>
+                  <button class="btn">Update Recipe</button>
                 </fieldset>
                 </form>
               </div>
@@ -75,6 +75,15 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="./js/app.js"></script>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
     <%- include('../layout/footer') %>
 </body>
 </html>
