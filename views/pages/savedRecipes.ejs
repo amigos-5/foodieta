@@ -10,6 +10,8 @@
     <!-- style -->
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/login.css">
+
    
     <link rel="stylesheet" href="/styles/recipeCard.css">
     
@@ -49,6 +51,7 @@
         flex-wrap: wrap;
         justify-content: center;
         margin: 20px auto;
+        background-color: #f7f1f1;
     ">
             <% savedList.forEach(element=>{ %>
                 <div class="card-container">
@@ -65,16 +68,18 @@
                 <span class="card-description subtle"> <p>Cholesterol: <%= element.cholesterol %></p></span>
 
                 <div id = "button_form">
-                  <form action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
+                  <form action="/deleteRecipe/<%= element.label %>?_method=delete" method="post" style="display: inline-block;">
                     <button class="recipebtn2">Delete</button>
-                  </form>
-                  <button class="updateBtn recipebtn" class="recipebtn">Update</button>
+                  </form >
+                  <button class="updateBtn recipebtn2" id="myBtn">Update</button>
               </div>
-
-              <div class="updateForm form-popup">
-                <form action="/update/<%= element.label %>?_method=put" method="POST" class="form-container">
-                  <fieldset>
-                  <legend> Update Recipe </legend>
+              <div class="updateForm form-popup modal-content ">
+                <div class="modal-header">
+                  <span class="close"></span>
+                  <h2>Update Recipe</h2>
+                </div>
+                <div class="modal-body2">
+                <form action="/update/<%= element.label %>?_method=put" method="POST" >
                   <input type="text" name="label" value=" <%= element.label%>">
                   <input type="text" name="calories" value="<%= element.calories%>">
                   <input type="text" name="fat" value="<%= element.fat%>">
@@ -83,9 +88,13 @@
                   <input type="text" name="cholesterol" value="<%= element.cholesterol%>">
 
                   <textarea name="ingredientLines" cols="30" rows="10"><%= element.ingredientlines%> </textarea>
-                  <button class="btn">Update Recipe</button>
-                </fieldset>
+                  <button class="recipebtn2">Update Recipe</button>
                 </form>
+              </div>
+
+                <div class="modal-footer">
+                  <h3> Foodieta</h3>
+                </div>
               </div>
             </div>
           </div>
@@ -93,19 +102,38 @@
 
         </div>
 
+
           <%}) %>
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="./js/app.js"></script>
   <script>
-    function openForm() {
-      document.getElementById("myForm").style.display = "block";
-    }
-    
-    function closeForm() {
-      document.getElementById("myForm").style.display = "none";
-    }
-    </script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+	
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+	
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+	
+		// When the user clicks the button, open the modal 
+		btn.onclick = function () {
+			modal.style.display = "block";
+		}
+	
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+	
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
     <%- include('../layout/footer') %>
 </body>
 </html>

@@ -8,6 +8,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: #f7f1f1;
   
 }
 .image-area
