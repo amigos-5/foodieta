@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../layout/head') %>
+  <link rel="stylesheet" href="/login.css">
+  <style>
+    .recipebtn2{
+      margin-top: 10px;
+      background-color: #fcbc40;
+      color: #f8f9fa;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: larger;
+      padding: 10px 15px;
+      border: 1px solid #fcbc40;
+
+    }
+    .recipebtn2:hover{
+      font-weight: bold;
+
+      background-color: #f8f9fa;
+      color: #fcbc40;
+      border: 1px solid #fcbc40;
+    }
+  </style>
 <body style="background-color: #f7f1f1;">
   <%- include('../layout/header') %>
     <main style="height: 100%;margin-top: 70px;margin-bottom: -110px; min-height: 600px;">
+      <h2 class="titleres">Selected Recipes</h2>
+
         <div id="caloriesSearch">
             <% savedList.forEach(element=>{ %>
                 <div class="card-container">
@@ -15,23 +39,30 @@
                         <span class="card-description subtle"> <p class = "sumDes">summary: </p> <%= element.summary %></span>
                         <div id = "button_form">
                           <form style="display: inline-block;" action="/deleteRecipeoptions/<%= element.title %>?_method=delete" method="post">
-                            <button class="recipebtn">Delete</button>
+                            <button class="recipebtn2">Delete</button>
                           </form>
-                          <button class="updateBtn1 recipebtn" class="recipebtn">Update</button>
+                          <button class="updateBtn1 recipebtn2" >Update</button>
                       </div>
 
-                      <div class="updateForm1 form-popup">
+                      <div class="updateForm form-popup modal-content ">
+                        <div class="modal-header">
+                          <span class="close"></span>
+                          <h2>Update Recipe</h2>
+                        </div>
+                        <div class="modal-body2">
+
                         <form action="/updateRecipe/<%= element.title %>?_method=put" method="POST" class="form-container">
-                          <fieldset>
-                          <legend> Update Recipe </legend>
                           <input type="text" name="title" value=" <%= element.title%>">
                           <textarea name="instructions" cols="30" rows="10"><%= element.instructions%> </textarea>
                           <textarea name="summary" cols="30" rows="10"><%= element.summary%> </textarea>
-                          <button class="btn">Update Recipe</button>
-                        </fieldset>
+                          <button class="recipebtn2">Update Recipe</button>
                         </form>
                       </div>
+                      <div class="modal-footer">
+                        <h3> Foodieta</h3>
                       </div>
+                      </div>
+                    </div>
                     </div>
                     <div class="card-shadow">
                     </div>
@@ -42,5 +73,32 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="./js/app.js"></script>
     <%- include('../layout/footer') %>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+    
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+    
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+    
+      // When the user clicks the button, open the modal 
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
+    
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+    
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
 </body>
 </html>

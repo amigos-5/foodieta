@@ -59,6 +59,10 @@ header {
   background-color: var(--white);
   margin-right: 40px;
 }
+.fas{
+  font-size: 20px;
+
+}
 .navbar-nav {
   display: grid;
   grid-template-columns: repeat(6, 0.9fr);
@@ -163,8 +167,9 @@ main {
 .textbox {
   color: var(--white);
   position: relative;
+
   top: 50%;
-  left: 65%;
+  left: 64%;
   width: 35%;
   height: 180px;
   align-items: center;
@@ -313,6 +318,14 @@ main {
   font-size:35px; 
   font-weight: bold;
   margin:-75px 0px 0px 100px;
+  font-family: var(--font);
+  text-shadow: 2px 2px var(--darkyello);
+}
+.titleres{
+  font-size:35px; 
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: bold;
   font-family: var(--font);
   text-shadow: 2px 2px var(--darkyello);
 }
