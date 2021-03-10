@@ -67,7 +67,12 @@ function homeHandler(res,req){
 }
 app.get('/sign' ,signHandler);
 function signHandler(req,res){
-  res.render('pages/sign');
+  if(req.session.loggedin){
+    res.render('pages/hi' ,{ username1: req.session.username});
+  }else{
+    res.render('pages/sign');
+  }
+  
 }
 app.get('/about' ,aboutHandler);
 function aboutHandler(req,res){
