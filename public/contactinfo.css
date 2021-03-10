@@ -1,16 +1,19 @@
 body{
   background-color: #f7f1f1;
+  background-image: url("../../images/background.jpg");
+  height:700px;
+   width:1349px;
+  background-attachment: fixed;
 }
 
 #Page{
   margin-top: 140px;
   display: flex;
-  width: 80%;
+  width: 50%;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
+ 
+  /* justify-content: left; */
 }
 .card-container{
   margin: 10px 20px;
@@ -20,8 +23,9 @@ body{
   box-shadow: black 3px 3px 3px;
 }
 .card-container:hover{
-  border: 2px solid rgb(92, 178, 253);
+  border: 2px solid black;
   padding: 40px;
+  background-color: black;
   box-shadow: rgb(92, 178, 253) 1px 1px 3px;
-  color: rgb(92, 178, 253);
+  color: wheat;
 }
