@@ -18,11 +18,32 @@
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+      .recipebtn2{
+        margin-top: 10px;
+        background-color: #fcbc40;
+        color: #f8f9fa;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        font-size: larger;
+        padding: 10px 15px;
+        border: 1px solid #fcbc40;
+
+      }
+      .recipebtn2:hover{
+        font-weight: bold;
+
+        background-color: #f8f9fa;
+        color: #fcbc40;
+        border: 1px solid #fcbc40;
+      }
+    </style>
     
 </head>
-<body style="background-color: rgba(255, 206, 71, 0.445);">
+<body>
   <%- include('../layout/header') %>
-    <main style="height: 100%;margin-top: 70px; min-height: 600px; overflow: hidden;">
+    <main style="height: 100%;margin-top: 70px; min-height: 1000px; overflow: hidden;">
         <div id="resultPage" style="    display: flex;
         width: 80%;
         flex-wrap: wrap;
@@ -44,8 +65,8 @@
                 <span class="card-description subtle"> <p>Cholesterol: <%= element.cholesterol %></p></span>
 
                 <div id = "button_form">
-                  <form style="display: inline-block;" action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
-                    <button class="recipebtn">Delete</button>
+                  <form action="/deleteRecipe/<%= element.label %>?_method=delete" method="post">
+                    <button class="recipebtn2">Delete</button>
                   </form>
                   <button class="updateBtn recipebtn" class="recipebtn">Update</button>
               </div>
@@ -67,8 +88,9 @@
                 </form>
               </div>
             </div>
-            <div class="card-shadow"></div>
           </div>
+          <div class="card-shadow"></div>
+
         </div>
 
           <%}) %>
