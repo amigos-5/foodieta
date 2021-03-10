@@ -458,7 +458,7 @@ function addRecipesOption (req, res){
     if (req.session.loggedin) {
       res.render('pages/hi',{ username1: req.session.username });
     }else{
-    res.redirect('/home.html');
+    res.render('pages/sign');
   }
   });
 }
