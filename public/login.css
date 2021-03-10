@@ -76,7 +76,34 @@
   /* opacity: 0.2; */
 
 }
+.modal-body2 {
+  padding: 2px 16px;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  background-color: #252525c4;
+  /* opacity: 0.2; */
 
+}
+
+.modal-body2 form input{
+  margin-bottom: 3px;
+  padding: 5px;
+  text-align: center;
+  font-family: var(--font);
+  border: none;
+  
+}
+.modal-body2 form input:focus{
+  outline: none;
+}
+
+.modal-body2 form{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .modal-body form input{
   padding: 5px;
   text-align: center;
