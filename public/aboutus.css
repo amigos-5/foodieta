@@ -4,21 +4,29 @@
     margin: 0;
     padding: 0;
 }
-body{
+/* body{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+<<<<<<< HEAD
   background-color: #f7f1f1;
   
 }
+=======
+} */
+>>>>>>> 379372b64d2c0d02ee2c17d507f0cc9d13e07016
 .image-area
 {
-    width: 90%;
+    /* width: 90%; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+<<<<<<< HEAD
     margin-top: 130px;
     
+=======
+    /* margin-top: 130px; */
+>>>>>>> 379372b64d2c0d02ee2c17d507f0cc9d13e07016
   
 }
 .img-wrapper
@@ -82,9 +90,15 @@ body{
 {
     transform: perspective(400px) rotateY(0deg);
 }
+<<<<<<< HEAD
 /* body {
   overflow: hidden;
 } */
+=======
+.img-wrapper {
+  overflow: hidden; /* Hide scrollbars */
+}
+>>>>>>> 379372b64d2c0d02ee2c17d507f0cc9d13e07016
 .img-wrapper ul
 {
     position: absolute;
