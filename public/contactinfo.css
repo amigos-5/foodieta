@@ -1,24 +1,27 @@
 body{
-  background-color: rgb(77, 77, 107);
+  background-color: #f7f1f1;
 }
 
 #Page{
   margin-top: 140px;
   display: flex;
   width: 80%;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-
 }
 .card-container{
+  margin: 10px 20px;
+
   border: 2px solid black;
-  padding: 20px;
+  padding: 40px;
   box-shadow: black 3px 3px 3px;
 }
 .card-container:hover{
-  border: 2px solid rgb(255, 255, 255);
-  padding: 20px;
-  box-shadow: rgb(255, 255, 255) 1px 1px 3px;
-  color: aliceblue;
+  border: 2px solid rgb(92, 178, 253);
+  padding: 40px;
+  box-shadow: rgb(92, 178, 253) 1px 1px 3px;
+  color: rgb(92, 178, 253);
 }

@@ -43,9 +43,8 @@
                           </form>
                           <button class="updateBtn1 recipebtn2" >Update</button>
                       </div>
-
-                      <div class="updateForm form-popup modal-content ">
-                        <div class="modal-header">
+                      <div class="updateForm form-popup modal-content" style="width:500px; position: absolute; margin-top: -550px; margin-left: 50px;" >
+                        <div class="modal-header" >
                           <span class="close"></span>
                           <h2>Update Recipe</h2>
                         </div>
@@ -53,8 +52,8 @@
 
                         <form action="/updateRecipe/<%= element.title %>?_method=put" method="POST" class="form-container">
                           <input type="text" name="title" value=" <%= element.title%>">
-                          <textarea name="instructions" cols="30" rows="10"><%= element.instructions%> </textarea>
-                          <textarea name="summary" cols="30" rows="10"><%= element.summary%> </textarea>
+                          <textarea name="instructions" cols="30" rows="5"><%= element.instructions%> </textarea>
+                          <textarea name="summary" cols="50" rows="15"><%= element.summary%> </textarea>
                           <button class="recipebtn2">Update Recipe</button>
                         </form>
                       </div>
